@@ -35,6 +35,27 @@ gem 'rails-html-sanitizer', '~> 1.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# GEMS FOR ADOPTAME
+# Use sqlite3 as the database for Active Record
+gem 'devise'
+
+# BOOTSTRAP
+
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem "twitter-bootstrap-rails"
+
+#IMAGE MAGICK / paperclip /aws-sdk for s3 amazon server
+gem 'paperclip'
+gem 'aws-sdk'
+
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+gem 'therubyracer', platforms: :ruby
+
+
+
+
+
+
 group :development, :test do
   # Call 'debugger' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -45,4 +66,12 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
+
+group :production do
+  gem 'pg', '0.15.1'
+  gem 'rails_12factor','0.0.2'
+end
+
+gem 'ransack'
+
 
