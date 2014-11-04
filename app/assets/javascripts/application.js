@@ -12,5 +12,23 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-1.11.0.min
+//= require jquery-migrate-1.2.1.min
+//= require modernizr
+//= require bootstrap
+//= require jquery.flexnav.min
+//= require jquery.hoverIntent.minified
+//= require jquery.flickrfeed
+//= require jquery.isotope.min
+//= require jquery.isotope.sloppy-masonry.min
+//= require jquery.imagesloaded.min
+//= require jquery.magnific-popup
+//= require owl.carousel.min
+//= require jquery.fitvids
+//= require jquery.appear
+//= require jquery.stellar.min
+//= require jquery.flexslider-min
+//= require jquery.validate
+//= require custom
 //= require turbolinks
 //= require_tree .

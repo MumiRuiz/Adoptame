@@ -39,17 +39,19 @@ gem 'rails-html-sanitizer', '~> 1.0'
 # Use sqlite3 as the database for Active Record
 #gem 'devise'
 
+
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+gem 'therubyracer', platforms: :ruby
+
 # BOOTSTRAP
 
-#gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-#gem "twitter-bootstrap-rails"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem "twitter-bootstrap-rails"
 
 #IMAGE MAGICK / paperclip /aws-sdk for s3 amazon server
 #gem 'paperclip'
 #gem 'aws-sdk'
 
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-gem 'therubyracer', platforms: :ruby
 
 
 group :development, :test do
