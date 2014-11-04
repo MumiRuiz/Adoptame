@@ -11,7 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141104220446) do
+ActiveRecord::Schema.define(version: 20141104222217) do
+
+  create_table "institutions", force: true do |t|
+    t.string   "name"
+    t.string   "username"
+    t.string   "email"
+    t.string   "password"
+    t.string   "country"
+    t.string   "state"
+    t.string   "city"
+    t.string   "website"
+    t.string   "manager"
+    t.string   "address"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "pets", force: true do |t|
+    t.string   "name"
+    t.string   "kind"
+    t.string   "age"
+    t.string   "gender"
+    t.string   "size"
+    t.text     "story"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"
