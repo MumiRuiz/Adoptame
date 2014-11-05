@@ -15,8 +15,8 @@ class PetTest < ActiveSupport::TestCase
 
   	test "Pet story has at least 10 characters" do
   		pet = Pet.new
-  		pet = "Test"
-  		assert !pet.save, "pet was saved w/out pet id"
+  		pet.story = "Test"
+  		assert !pet.save, "was saved wtihout less than 10 characters"
   	end
 
 end

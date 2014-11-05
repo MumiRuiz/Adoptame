@@ -19,9 +19,9 @@ class InstitutionTest < ActiveSupport::TestCase
   	#puts "--ERRORS--"
   	#inst.errors.full_messages.each{ |msg| puts msgs }	
 
-  	test "Pet story has at least 10 characters" do
+  	test "Institution description has at least 10 characters" do
   		inst = Institution.new
-  		inst.story = "Test"
-  		assert !inst.save, "inst was saved w/out inst id"
+  		inst.description = "Test"
+  		assert !inst.save, "inst was saved wtihout less than 10 characters"
   	end
 end

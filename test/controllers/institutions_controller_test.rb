@@ -11,10 +11,21 @@ class InstitutionsControllerTest < ActionController::TestCase
     assert_not_nil assigns(:institutions)
   end
 
+  #Si no esta logeado debe ser direccionado a la pagina de autenticacion
+  test "should be redirected to logging page when trying to get new page and is not logged in" do
+    get :new
+
+    assert_response :redirect
+    assert_redirected_to new_user_path
+  end
+
+=begin
+
   test "should get new" do
     get :new
     assert_response :success
   end
+
 
   test "should create institution" do
     assert_difference('Institution.count') do
@@ -46,4 +57,6 @@ class InstitutionsControllerTest < ActionController::TestCase
 
     assert_redirected_to institutions_path
   end
+=end
+
 end
