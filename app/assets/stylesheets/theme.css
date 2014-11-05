@@ -877,7 +877,7 @@ body.boxed .site-wrapper {
   color: #9CDC2E;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 1.2);
 }
-@media (min-width: <480px) and (max-width: 1199px) {
+@media (min-width: 480px) and (max-width: 1199px) {
   .search-box h2 {
     font-size: 24px;
     line-height: 30px;
@@ -886,7 +886,7 @@ body.boxed .site-wrapper {
 .search-box .form-group {
   margin-bottom: 0px;
 }
-@media (min-width: <480px) and (max-width: 1199px) {
+@media (min-width: 480px) and (max-width: 1199px) {
   .search-box .form-group {
     margin-bottom: 0px;
   }
