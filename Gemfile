@@ -37,7 +37,7 @@ gem 'rails-html-sanitizer', '~> 1.0'
 
 # GEMS FOR ADOPTAME
 # Use sqlite3 as the database for Active Record
-#gem 'devise'
+gem 'devise'
 
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
