@@ -1,27 +1,27 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  username: MyString
-  email: MyString
-  password: MyString
-  country: MyString
-  state: MyString
-  city: MyString
-  website: MyString
-  manager: MyString
-  address: MyString
-  description: MyText
+  name: Huella Roja
+  username: Huellita
+  email: huella.info@hotmail.com
+  password: 12345678
+  country: Colombia
+  state: Bogota
+  city: Bogota
+  website: www.huella.com
+  manager: Gustavo ALgo
+  address: Cra 104 No 13d-77
+  description: Buscamos perritos
 
 two:
-  name: MyString
-  username: MyString
-  email: MyString
-  password: MyString
-  country: MyString
-  state: MyString
-  city: MyString
-  website: MyString
-  manager: MyString
-  address: MyString
-  description: MyText
+  name: Otra Fundacion
+  username: otra_fundacion
+  email: otra_fundacion@hotmail.com
+  password: 23145678
+  country: Colombia
+  state: Bogota
+  city: Bogota
+  website: www.otra_fundacion.com
+  manager: El tipo ese
+  address: calle 65 No 14d-89
+  description: Buscamos gaticos
