@@ -52,6 +52,11 @@ gem "twitter-bootstrap-rails"
 #gem 'paperclip'
 #gem 'aws-sdk'
 
+#CONTACT_FORM
+gem 'mail_form'
+gem 'simple_form'
+gem 'country_select'
+
 group :test do
   gem 'rspec', '~> 3.1.0'	
   gem "factory_girl_rails"

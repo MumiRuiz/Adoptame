@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'contact/new'
+
+  get 'contact/create'
+
   devise_for :users
   get 'static_pages/services'
 
@@ -11,6 +15,8 @@ Rails.application.routes.draw do
   resources :institutions
 
   resources :users
+
+  resources :contact
 
   
   # The priority is based upon order of creation: first created -> highest priority.
