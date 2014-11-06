@@ -52,10 +52,10 @@ Rails.application.configure do
   :user_name => 'info@adoptame.co',
   :password => 'adoptame',
   :authentication => 'plain',
-  ssl:                    true,  
-  tls:                    true,  
-  enable_starttls_auto:   true,
-  :enable_starttls_auto => true
+  :ssl =>                   true,  
+  :tls =>                   true,  
+  :enable_starttls_auto =>  true,
+  :enable_starttls_auto => true,
   }
 
 end
