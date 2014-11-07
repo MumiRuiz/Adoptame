@@ -50,7 +50,7 @@ Rails.application.configure do
   :port => 465,
   :domain => "adoptame.co",
   :user_name => 'info@adoptame.co',
-  :password => 'adoptame',
+  :password => 'catps2psnsqr',
   :authentication => 'plain',
   ssl:                    true,  
   tls:                    true,  
