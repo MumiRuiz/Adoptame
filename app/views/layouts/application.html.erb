@@ -1,33 +1,335 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Adoptame</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html class="not-ie no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
 
-	<li class= "divider"></li>
-		<% if user_signed_in? %>
-			<li class="dropdown">	
-				<%= link_to current_user.name , edit_user_registration_path, html: {class: "dropdown-toggle"} %>
-			</li>
-	<li>
-		<%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete %>
-	</li>
-	<% else %>
-		<li class="active">
-		<%= link_to 'Regístrate', new_user_registration_path, html: {class: "btn btn-sm btn-warning"}%>
-		</li>
-		<li>
-			<%= link_to 'Iniciar Sesión', new_user_session_path, html: {class: "btn btn-sm btn-warning"}%>
-		</li>
-	<% end %>
-	</ul>
+    <title><%= content_for?(:title) ? yield(:title) : "Adoptame" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%#= javascript_include_tag "modernizr" %>
+    <%= csrf_meta_tags %>
 
 
-<%= yield %>
+      <link rel="shortcut icon"><%= favicon_link_tag 'favicon.ico' %> 
+     <!--  <link rel="apple-touch-icon"> <%#= image_tag("logo-adoptame57px.png")%> 
+      <link rel="apple-touch-icon" sizes="72x72"> <%#= image_tag("logo-adoptame-alpha72px.png")%> 
+      <link rel="apple-touch-icon" sizes="114x114"> <%#= image_tag("logo-adoptame-alpha114.png")%> 
+      <link rel="apple-touch-icon" sizes="144x144"> <%#= image_tag("logo-adoptame-alpha144.png")%>  -->
 
-</body>
+
+  </head>
+
+  <body>
+
+      <div class="site-wrapper">
+
+    <!-- Header -->
+    <header class="header header-menu-fullw">
+
+      <div class="header-top-right">
+
+        <div class="container">
+         
+          <ul id="menu-main" class="nav navbar-nav">
+
+
+            <li class= "divider"></li>
+            <% if user_signed_in? %>
+            <li class="dropdown">
+
+              <%= link_to current_user.name , edit_user_registration_path, html: {class: "dropdown-toggle"} %>
+         
+              
+                
+            </li>
+            <li>
+              <%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete %>
+            </li>
+            <% else %>
+              <li class="active">
+              <%= link_to 'Regístrate', new_user_registration_path, html: {class: "btn btn-sm btn-warning"}%>
+            </li>
+            <li>
+              <%= link_to 'Iniciar Sesión', new_user_session_path, html: {class: "btn btn-sm btn-warning"}%>
+            </li>
+            <% end %>
+          </ul>
+
+
+
+          <!-- Left Nav Section -->
+          <!-- <ul class="left">
+            <li class= "divider"></li>
+             
+            <li>
+              <%#= link_to 'Users', users_path %>
+            </li>
+            
+             <li class="dropdown"><a class="dropdown-toggle" data-target="#" href="contact.html">Contact</a>
+              <ul class="dropdown-menu">
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="full.html">Full Width Page</a></li>
+                <li><a href="components.html">B3 Components</a></li>
+                <li><a href="columns.html">Columns</a></li>
+                <li><a href="typography.html">Typography</a></li>
+                <li><a href="videos.html">Responsive Videos</a></li>
+              </ul>
+            </li> 
+          </ul>    --> 
+        </div>
+      </div>
+
+<!-- fin de header top -->
+
+      <div class="header-main">
+        <div class="container">
+          <!-- Logo -->
+          <div class="logo">
+            <a href="/"><%= image_tag "logo.png" %></a>
+            <!-- <h1><a href="index.html"><span>Pet</span>Sitter</a></h1>
+            <p class="tagline">Find an Awesome PetSitter</p> -->
+          </div>
+          <!-- Logo / End -->
+
+          <button type="button" class="navbar-toggle">
+              <i class="fa fa-bars"></i>
+            </button>
+
+            <!-- Banner -->
+            <div class="head-info">
+              <ul class="head-info-list">
+                <!-- <li><span>Call us on:</span> +1 (234) 567890</li> -->
+                <li><span>Email:</span> <a href="info@adoptame.co" target="_blank">info@adoptame.co</a></li>
+              </ul>
+              <ul class="social-links">
+              <li><a href="https://twitter.com/Adoptame_co" target="_blank"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="http://facebook.com/AdoptaMeColombia" target="_blank"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="https://plus.google.com/u/0/101492112676412965789/posts/p/pub" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+              <!-- <li><a href="#"><i class="fa fa-pinterest"></i></a></li> -->
+              <li><a href="http://instagram.com/adopta_me" target="_blank"><i class="fa fa-instagram"></i></a></li>
+<!--               <li><a href="#"><i class="fa fa-rss"></i></a></li>
+ -->            </ul>
+
+            </div>
+            <!-- Banner / End -->
+        </div>
+      </div>
+      
+      <!-- Navigation -->
+      <nav class="nav-main">
+        <div class="container">
+          <ul data-breakpoint="992" class="flexnav">
+            <li class="active"><a href="/">Inicio</a></li>
+            <li>
+
+              <%# CAMBIAR EL PATH = link_to 'Recursos', posts_path %>
+            </li>
+            <li>
+              <%= link_to '¿Quiénes Somos?', static_pages_about_path%>
+
+              
+              
+            </li>
+
+            <li>
+
+              <%= link_to '¿Cómo Funciona?', static_pages_services_path%>
+
+            
+              
+            </li>
+            
+            
+            <li>
+              <%= link_to 'Contáctenos', static_pages_about_path%>
+
+             </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- Navigation / End -->
+      
+    </header>
+    <!-- Header / End -->
+
+
+
+
+    <div class="row">
+      <div class="columns large-12"></div>
+        <% flash.each do |type, message| %>
+        <div data-alert class="alert-box radius <%= flass_class(type) %>">
+          <%= message %>
+          <a href="#" class="close">&times;</a>
+        </div>
+        <% end %>
+        <%= yield %>
+      </div>
+
+      <!-- Footer -->
+      <footer class="footer" id="footer">
+        <div class="footer-widgets">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6 col-md-2">
+                <!-- Widget :: Custom Menu -->
+                <div class="widget_nav_menu widget widget__footer">
+                  <h3 class="widget-title">Información</h3>
+                  <div class="widget-content">
+                    <ul>
+
+
+                      <li>
+                        <%= link_to 'Fundaciones', institutions_path%>
+
+
+                       </li>
+
+                      <li>
+                        <%= link_to 'Preguntas Frecuentes', static_pages_faq_path%>
+
+
+                       </li>
+                      <li><%= link_to '¿Cómo funciona?', static_pages_services_path%></li>
+                      <li><%= link_to '¿Quiénes Somos?', static_pages_about_path%></li>
+                      <li><%= link_to 'Contáctenos', static_pages_about_path%></li>
+                      
+                    </ul>
+                  </div>
+                </div>
+                <!-- /Widget :: Custom Menu -->
+              </div>
+               <div class="col-sm-1 col-md-2"> 
+                <!-- Widget :: Categories -->
+                <!-- <div class="widget_categories widget widget__footer">
+                  <h3 class="widget-title">Categorias</h3>
+                  <div class="widget-content">
+                    <ul>
+                      <li><%#= link_to 'Perros', pets_path%></li>
+                      <li><%#= link_to 'Gatos', pets_path%></li>
+                      
+                      
+                    </ul>
+                  </div>
+                </div> -->
+                <!-- /Widget :: Categories -->
+              </div>
+
+              <div class="clearfix visible-sm"></div>
+
+              <div class="col-sm-6 col-md-4">
+                <!-- Widget :: Latest Posts -->
+                <div class="latest-posts-widget widget widget__footer">
+                  <h3 class="widget-title">Tweets</h3>
+                  <div class="widget-content">
+                    <a class="twitter-timeline"
+                      href="https://twitter.com/Adoptame_co"
+                      data-widget-id="510916307567378432">
+                      Tweets by @adoptame_co
+                      </a>
+                      <script type="text/javascript">
+                      window.twttr = (function (d, s, id) {
+                      var t, js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return;
+                      js = d.createElement(s); js.id = id; js.src= "https://platform.twitter.com/widgets.js";
+                      fjs.parentNode.insertBefore(js, fjs);
+                      return window.twttr || (t = { _e: [], ready: function (f) { t._e.push(f) } });
+                       }(document, "script", "twitter-wjs"));
+                      </script>
+                  </div>
+                </div>
+                <!-- /Widget :: Latest Posts -->
+              </div>
+              <div class="col-sm-6 col-md-4">
+                <!-- Widget :: Newsletter -->
+                <div class="widget_newsletter widget widget__footer">
+                  <h3 class="widget-title">Recibe nuestra boletín informativo</h3>
+                  <div class="widget-content">
+                    <p>¿Quiéres mantenerte actualizado sobre todo lo que pasa en Adopta-Me? Suscríbete a nuestras actualizaciones.</p>
+
+                    <form action="#" method="POST" role="form">
+                      <div class="row">
+                        <div class="col-md-8">
+                          <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Escriba su email aqui...">
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <button type="submit" class="btn btn-success btn-block">Suscríbete</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <!-- /Widget :: Newsletter -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6 col-md-4">
+                Copyright &copy; 2014  <a href="https://www.adoptame.co">Adoptame</a> &nbsp;| &nbsp;All Rights Reserved
+              </div>
+              <div class="col-sm-6 col-md-8">
+                <div class="social-links-wrapper">
+                  <span class="social-links-txt">Síguenos</span>
+                  <ul class="social-links social-links__light">
+                    <li><a href="https://www.facebook.com/AdoptaMeColombia" target="_blank"><i class="fa fa-facebook"></i></a></li>
+
+                    <li><a href="https://twitter.com/Adoptame_co" target="_blank"><i class="fa fa-twitter"></i></a></li>
+
+                    <!-- <li><a href="#"><i class="fa fa-linkedin"></i></a></li> -->
+                    <li><a href="http://instagram.com/adopta_me" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                    <!-- <li><a href="#"><i class="fa fa-rss"></i></a></li> -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- Footer / End -->
+      
+    </div>
+    <!-- Main / End -->
+  </div>
+  
+    </div>
+    
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
+    <script>
+      jQuery(function($){
+        $('body').addClass('loading');
+      });
+      
+      $(window).load(function(){
+        $('.flexslider').flexslider({
+          animation: "fade",
+          controlNav: true,
+          directionNav: false,
+          prevText: "",
+          nextText: "",
+          start: function(slider){
+            $('body').removeClass('loading');
+          }
+        });
+      });
+    </script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54773894-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </body>
 </html>

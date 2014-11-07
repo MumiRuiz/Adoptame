@@ -1,47 +1,107 @@
-<p id="notice"><%= notice %></p>
+<!-- Main -->
+    <div class="main" role="main">
 
-<h1>Listing Institutions</h1>
+    <section class="page-heading">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <h1>Fundaciones</h1>
+            </div>
+            <div class="col-md-6">
+              <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Pages</a></li>
+                <li class="active">Team</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Page Heading / End -->
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Username</th>
-      <th>Email</th>
-      <th>Password</th>
-      <th>Country</th>
-      <th>State</th>
-      <th>City</th>
-      <th>Website</th>
-      <th>Manager</th>
-      <th>Address</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @institutions.each do |institution| %>
-      <tr>
-        <td><%= institution.name %></td>
-        <td><%= institution.username %></td>
-        <td><%= institution.email %></td>
-        <td><%= institution.password %></td>
-        <td><%= institution.country %></td>
-        <td><%= institution.state %></td>
-        <td><%= institution.city %></td>
-        <td><%= institution.website %></td>
-        <td><%= institution.manager %></td>
-        <td><%= institution.address %></td>
-        <td><%= institution.description %></td>
-        <td><%= link_to 'Show', institution %></td>
-        <td><%= link_to 'Edit', edit_institution_path(institution) %></td>
-        <td><%= link_to 'Destroy', institution, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <!-- Page Content -->
+      <section class="page-content">
+        <div class="container">
+          
+          <div class="job_listings">
+            <form class="job_filters">
 
-<br>
+              <div class="search_jobs">
+                <div class="search_keywords">
+                  <label for="search_keywords">Palabras Clave</label>
+                  <input type="text" name="search_keywords" id="search_keywords" placeholder="Todas Las Fundaciones" class="form-control" value="" />
+                </div>
 
-<%= link_to 'New Institution', new_institution_path %>
+                <div class="search_location">
+                  <label for="search_location">Ubicación</label>
+                  <input type="text" name="search_location" id="search_location" placeholder="Cualquier Ubicación" class="form-control" value="" />
+                </div>
+
+                <div class="search_type">
+                  <label>Masctoas</label>
+                  <span class="select-style">
+                    <select class="form-control">
+                      <option>Perros</option>
+                      <option>Gatos</option>
+                     <!--  <option>Dog Walking</option>
+                      <option>Cat Feeding</option> -->
+                    </select>
+                  </span>
+                </div>
+
+                <div class="search_submit">
+                  <label>Submit</label>
+                  <button class="btn btn-block btn-primary">Buscar</button>
+                </div>
+              </div>
+            </form>
+
+
+          <ul class="job_listings">
+
+
+            <% @institutions.each do |institution| %>
+
+              <li class="job_listing">
+               <%= link_to institution_path(institution) do %> 
+                  <img src="http://placehold.it/58x58" alt="" class="company_logo">
+                  <div class="position">
+                    <h3><%= institution.name %></h3>
+                    <div class="company">
+                      <strong><%= institution.website %></strong>
+                    </div>
+                  </div>
+                  <div class="location">
+                    <i class="fa fa-map-marker"></i> <%= institution.city %>
+                  </div>
+                  <ul class="meta">
+                    <li class="date">
+                      Posted 2 months ago
+                    </li>
+                  </ul>
+                <% end %>
+              </li>
+            <% end %>
+            </ul>
+
+              </div>
+
+          <div class="spacer"></div>
+
+          <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+              <a class="load_more_jobs btn btn-default" href="#">Cargar Más Fundaciones</a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      <!-- Page Content / End -->
+
+
+
+
+
+
+

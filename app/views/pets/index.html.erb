@@ -1,37 +1,79 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Listing Pets</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Kind</th>
-      <th>Age</th>
-      <th>Gender</th>
-      <th>Size</th>
-      <th>Story</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<!-- Main -->
+    <div class="main" role="main">
 
-  <tbody>
-    <% @pets.each do |pet| %>
-      <tr>
-        <td><%= pet.name %></td>
-        <td><%= pet.kind %></td>
-        <td><%= pet.age %></td>
-        <td><%= pet.gender %></td>
-        <td><%= pet.size %></td>
-        <td><%= pet.story %></td>
-        <td><%= link_to 'Show', pet %></td>
-        <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
-        <td><%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <section class="page-heading">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <h1>Mascotas</h1>
+            </div>
+            <div class="col-md-6">
+              <ul class="breadcrumb">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#">¿Quiénes somos?</a></li>
+                <li class="active">Mascotas</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Page Heading / End -->
+
+
+
+
+
+
+<!-- Page Content -->
+      <section class="page-content">
+        <div class="container">
+
+          <ul class="team-list row">
+            <% @pets.each do |pet| %>
+            <li class="team-item col-md-3">
+              <%= link_to pet_path(pet) do %> 
+              <div class="team-item-inner">
+                <figure class="team-thumb">
+                <!-- descomentar para que funcione la foto -->
+                 <%#= image_tag pet.photo.url(:thumb) %>
+                
+                  <div class="overlay">
+
+
+
+                  </div>
+                   
+                </figure>
+
+                <header class="team-head">
+                  <h5 class="team-name"><%= pet.name %></h5>
+                  <span class="team-head-info"></span>
+                     <i class="entypo location"></i> <%= pet.city %><br />
+                     <i class="entypo vcard"></i> <%= pet.age %> Meses<br />
+                     <i class="entypo direction"></i><%= pet.gender %><br />
+                     <i class="entypo direction"></i><%= pet.size %> <br />
+
+                </header>
+                <div class="team-excerpt">
+                 
+                </div>
+              </div>
+               <% end %>
+            </li>
+                <% end %>
+
+          </ul>
+
+
+
+
+          </div>
+      </section>
+
+
+
 
 <br>
 
-<%= link_to 'New Pet', new_pet_path %>
