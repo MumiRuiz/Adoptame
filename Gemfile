@@ -39,7 +39,7 @@ gem 'rails-html-sanitizer', '~> 1.0'
 # Use sqlite3 as the database for Active Record
 gem 'devise'
 gem 'devise-i18n'
-
+gem 'cancancan'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
 
