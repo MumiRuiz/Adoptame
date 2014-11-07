@@ -1,5 +1,7 @@
 class PetsController < ApplicationController
   before_action :set_pet, only: [:show, :edit, :update, :destroy]
+  #Bloquea estas acciones a menos que sea admin
+  load_and_authorize_resource only: [:edit, :destroy, :update, :create]
 
   # GET /pets
   # GET /pets.json
@@ -10,6 +12,7 @@ class PetsController < ApplicationController
   # GET /pets/1
   # GET /pets/1.json
   def show
+
   end
 
   # GET /pets/new
@@ -19,6 +22,9 @@ class PetsController < ApplicationController
 
   # GET /pets/1/edit
   def edit
+    #Autorize! levanta una exepcion si el usuario no puede editar una mascota
+    #@pet = Pet.find(params[:id]) 
+    #authorize! :update, @pet
   end
 
   # POST /pets
@@ -72,3 +78,13 @@ class PetsController < ApplicationController
       params.require(:pet).permit(:name, :kind, :age, :gender, :size, :story)
     end
 end
+=begin
+
+En caso de que se actualice un usuario sera necesario cambiarlo por sus habilidades
+if @user.update_attributes(params[:user])
+  @current_ability = nil
+  @current_user = nil
+  # ...
+end
+
+=end

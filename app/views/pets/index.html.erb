@@ -72,8 +72,6 @@
           </div>
       </section>
 
-
-
-
-<br>
-
+  <%if can? :create, @pet%>
+  <%= link_to 'New Pet', new_pet_path, class: 'button' %>
+  <% end %>

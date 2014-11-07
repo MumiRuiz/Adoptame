@@ -8,4 +8,9 @@ class ApplicationController < ActionController::Base
 	def set_locale
 	  I18n.locale = params[:locale] || I18n.default_locale
 	end
+
+	#Rescatando el error y redirigiendolo al root_url
+	rescue_from CanCan::AccessDenied do |exception|
+    	redirect_to root_url, :alert => exception.message
+	end
 end

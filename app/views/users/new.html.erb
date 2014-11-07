@@ -1,5 +1,15 @@
 <h1>New User</h1>
 
+<div class="container">
 <%= render 'form' %>
 
 <%= link_to 'Back', users_path %>
+
+<!--Cuadro para asigar atributos a un nuevo super usuario-->
+
+  <% for role in User::ROLES %>
+    <%= check_box_tag "user[roles][#{role}]", role, @user.roles.include?(role), {:name => "user[roles][]"}%>
+    <%= label_tag "user_roles_#{role}", role.to_s.humanize %><br />
+  <% end %>
+  <%= hidden_field_tag "user[roles][]", "" %>
+</div>
