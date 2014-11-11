@@ -5,11 +5,13 @@ class ApplicationController < ActionController::Base
 	# For APIs, you may want to use :null_session instead.
 	protect_from_forgery with: :exception
 
+
+
 	def set_locale
 	  I18n.locale = params[:locale] || I18n.default_locale
 	end
 
-	#Rescatando el error y redirigiendolo al root_url
+	#Rescatando el error acceso denegado y redirigiendolo al root_url
 	rescue_from CanCan::AccessDenied do |exception|
     	redirect_to root_url, :alert => exception.message
 	end

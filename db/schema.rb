@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141107084252) do
+ActiveRecord::Schema.define(version: 20141111045203) do
 
   create_table "adoptions", force: true do |t|
     t.string   "user_description"
@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(version: 20141107084252) do
     t.string   "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.integer  "roles_mask"
+    t.string   "role"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

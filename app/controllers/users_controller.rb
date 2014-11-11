@@ -1,9 +1,6 @@
 class UsersController < ApplicationController
-  #Roles de usuario
-  
-
-
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  #Verifica a el usuario para las siguientes acciones
 
   # GET /users
   # GET /users.json

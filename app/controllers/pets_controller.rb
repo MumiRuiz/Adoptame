@@ -2,6 +2,7 @@ class PetsController < ApplicationController
   before_action :set_pet, only: [:show, :edit, :update, :destroy]
   #Bloquea estas acciones a menos que sea admin
   load_and_authorize_resource only: [:edit, :destroy, :update, :create]
+  before_action :authenticate_user!
 
   # GET /pets
   # GET /pets.json
