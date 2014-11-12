@@ -1,10 +1,11 @@
 class PetsController < ApplicationController
   before_action :set_pet, only: [:show, :edit, :update, :destroy]
 
-  # GET /pets
-  # GET /pets.json
+  #Buscador con ransack
   def index
     @pets = Pet.all
+    @search = Pet.ransack(params[:q])
+    @pets = @search.result
   end
 
   # GET /pets/1
@@ -50,6 +51,15 @@ class PetsController < ApplicationController
       end
     end
   end
+
+  #Buscador con ransack
+  def search
+     @pets = Pet.tagged_with(params[:search])
+     
+     if @pets.empty?
+       redirect_to home_index_path, alert: 'No se encontraron restaurantes con los criterios de busqueda ingresados. Por favor intente con otra palabra.' 
+     end
+   end
 
   # DELETE /pets/1
   # DELETE /pets/1.json

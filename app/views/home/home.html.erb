@@ -1,2 +1,344 @@
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+
+<!-- Main -->
+    <div class="main" role="main">
+
+      <!-- Slider -->
+      <section class="slider-holder .col-xs-,  .col-sm-,  .col-md-,  .col-lg-">
+        <div class="container">
+          <div class="flexslider carousel">
+            <ul class="slides">
+              <li>
+                <%= image_tag "slider4_1121x480.png" %></a>
+              </li>
+              <li>
+                <%= image_tag "slider6_1121x480.png" %></a>
+              </li>
+              <li>
+                <%= image_tag "slider7_1121x480.png" %></a>
+              </li>
+            </ul>
+
+            
+
+
+
+           <div class="search-box .col-xs-,  .col-sm-,  .col-md-,  .col-lg-">
+       
+          <h2>Busca una mascota</h2>
+             <%= search_form_for  @search do |f|%>            
+  
+            <div class= "select-style" >
+               <%= f.select :city_eq, options_for_select([['Selecciona la Ciudad ', ''], ['Arauca'], ['Armenia'], ['Barranquilla'], ['Bogotá'], ['Bucaramanga'], ['Cali'], ['Cartagena de Indias'], ['Cucutá'], ['Florencia'], ['Ibagué'], ['Inírida'], ['Leticia'], ['Manizales'], ['Medellín'], ['Mitú'], ['Mocoa'], ['Montería'], ['Neiva'], ['Pasto'], ['Pereira'], ['Popayán'], ['Puerto Carreño'], ['Quibdó'], ['Riohacha'], ['San Andrés'], ['San José del Guaviare'], ['Santa Marta'], ['Sincelejo'], ['Tunja'], ['Valledupar'], ['Villavicencio'], ['Yopal']], :selected => :city) %>
+                <%#= f.text_field :city_cont, class: "form-control", placeholder: "Escribe tu ciudad " %>
+            </div>
+
+            <div class= "select-style" >
+               
+                <%= f.select :kind_eq, options_for_select([['Selecciona tipo de mascota', ''], ['Perro'], ['Gato']], :selected => :kind) %>
+            </div>
+
+            <div class= "select-style">
+               
+               <%= f.select :gender_eq, options_for_select([['Selecciona el genero de la mascota', ''], ['Macho'], ['Hembra']], :selected => :gender) %>
+            </div>
+
+            <div class= "select-style">
+               
+                <%= f.select :size_eq, options_for_select([['Selecciona el tamaño', ''], ['Pequeño'], ['Mediano'], ['Pequeño'], ['Grande'], ['Extra Grande']], :selected => :size), class: "select-style" %>
+            </div>
+
+            <div>
+               
+                <%= f.text_field :age_cont, class: "form-control", placeholder: "Escribe la edad en meses" %>
+            </div>
+               
+
+                <div class="actions"><%= f.submit "search",  class: "btn btn-success"%></div>
+
+
+              </a>
+              <%end%>
+            </div>
+          </div>
+        </div>
+        
+      </section>
+      <!-- Slider / End -->
+
+
+
+      <!-- Page Content -->
+      <section class="page-content">
+        <div class="container">
+          
+          <!-- Light Section -->
+          <section class="section-light section-nomargin">
+            <div class="row">
+              <div class="col-md-8">
+                <h2 class="with-subtitle" data-animation="fadeInUp" data-animation-delay="0">Nuevas Mascotas <small data-animation="fadeInUp" data-animation-delay="100">Mascotas en adopción</small></h2>
+                <div class="row">
+                 
+                  <% @pets.limit(4).each do |pet| %>
+                  <div class="col-xs-6 col-sm-3 col-md-3" data-animation="fadeInLeft" data-animation-delay="0">
+                    <div class="job-listing-box">
+                      <%= link_to pet_path(pet) do %> 
+                      <figure class="job-listing-img">
+                      
+                         <%#= image_tag pet.photo.url(:thumb) %>
+                      </figure>
+                      <div class="job-listing-body">
+                        <h4 class="name">
+                          <a href="job-profile.html"><%= pet.name %></a></h4>
+                        <p><%=truncate(pet.story){ link_to "Continue", pet_path(pet)} %> 
+                        </p>
+                      </div>
+                      <footer class="job-listing-footer">
+                        <ul class="meta">
+                          <li class="category"><%= pet.kind %></li>
+                          <li class="location"><a href="#">  <%=pet.city %> |  <%= pet.region %> |   <%= pet.country %></a></li>
+                          <li class="location"><%#=pet.institution %></li>
+                          <li class="date">Posted <%= time_ago_in_words(pet.created_at) %> ago</li>
+                          
+                        </ul>
+                      </footer>
+                      <% end %>
+                    </div>
+                  </div>
+                <%end%>
+
+                  <div class="clearfix visible-xs"></div>
+                  <div class="spacer visible-xs"></div>
+
+                 
+                </div>
+              </div>
+              <div class="col-md-4" data-animation="fadeInRight" data-animation-delay="0">
+                <div class="spacer-lg visible-sm visible-xs"></div>
+                <h2>Aliados</h2>
+                <!-- Featured Listings -->
+                <div class="owl-carousel owl-theme owl-featured-listings">
+                  <div class="job-listing-box featured">
+                    <figure class="job-listing-img">
+                      <a href="job-profile.html">
+                        <%= image_tag "ipetchicago-logo300x300.png"  %>
+                    </figure>
+                    <div class="job-listing-holder">
+                      <div class="job-listing-body">
+                        <h4 class="name"><a href="job-profile.html">iPet Chicago</a></h4>
+                        <p></p>
+                      </div>
+                      <footer class="job-listing-footer">
+                        <ul class="meta">
+                          <li class="category"></li>
+                          <li class="location"><a href="#">Chicago, EE.UU</a></li>
+                          <li class="date">Posted 5 days ago</li>
+                        </ul>
+                      </footer>
+                    </div>
+                  </div>
+                  
+                  
+                </div>
+                <!-- Featured Listings / End -->
+            
+              </div>
+            </div>
+          </section>
+          <!-- Light Section / End -->
+
+          <!-- Section -->
+          <section class="section section-nomargin">
+            <div class="row">
+              <div class="col-md-6" data-animation="fadeInLeft" data-animation-delay="0">
+                <div class="img-box">
+                  <%= image_tag("img3.png", :alt => "") %>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h2>¿Quieres Adoptar?</h2>
+                <div class="icon-box circled icon-box-animated" data-animation="fadeInLeft" data-animation-delay="0">
+                  <div class="icon">
+                    <i class="entypo search"></i>
+                  </div>
+                  <div class="icon-box-body">
+                    <h4>Busca tu mascota ideal</h4>
+                    Selecciona diferentes criterios de búsqueda para encontrar la mascota perfecta para TU HOGAR.
+
+                  </div>
+                </div>
+
+                <div class="icon-box circled icon-box-animated" data-animation="fadeInLeft" data-animation-delay="200">
+                  <div class="icon">
+                    <i class="entypo picture"></i>
+                  </div>
+                  <div class="icon-box-body">
+                    <h4>Revisa los perfiles de las mascotas para adopción</h4>
+                    De acuerdo a tu búsqueda, encontrarás todas las mascotas disponibles para adopción, y lo mejor CERCA TUYO.
+                  </div>
+                </div>
+
+                <div class="icon-box circled icon-box-animated" data-animation="fadeInLeft" data-animation-delay="400">
+                  <div class="icon">
+                    <i class="entypo check"></i>
+                  </div>
+                  <div class="icon-box-body">
+                    <h4>Adopta tu nuevo amigo</h4>
+                    <p>Te ponemos en contácto con las fundaciones donde habiten las mascotas para iniciar el proceso de adopción.</p>
+                  </div>
+                </div>
+
+                <a href="/pets" class="btn btn-primary">Todas las Mascotas <i class="fa fa-arrow-circle-o-right fa-lg fa-right"></i></a>
+
+              </div>
+            </div>
+
+            <hr class="lg">
+
+            <div class="row">
+              <div class="col-md-6 col-md-push-6" data-animation="fadeInRight" data-animation-delay="0">
+                <div class="img-box">
+                  <%= image_tag("img2.png", :alt => "rss feed") %>
+                </div>
+              </div>
+              <div class="col-md-6 col-md-pull-6">
+                <h2>¿Eres una fundación y quieres ser parte de ADOPTA-ME?</h2>
+                <div class="icon-box circled icon-box-animated" data-animation="fadeInRight" data-animation-delay="0">
+                  <div class="icon">
+                    <i class="entypo pencil"></i>
+                  </div>
+                  <div class="icon-box-body">
+                    <h4>Regístrate</h4>
+                    Diligencia completamente el formulario de inscripción y recibirás un email con tu usuario y contraseña para ingresar a la plataforma de Fundaciones.
+                  </div>
+                </div>
+
+                <div class="icon-box circled icon-box-animated" data-animation="fadeInRight" data-animation-delay="200">
+                  <div class="icon">
+                    <i class="entypo vcard"></i>
+                  </div>
+                  <div class="icon-box-body">
+                    <h4>Ingresa tus mascotas</h4>
+                    Ingresar y mantener al día la base de datos de tus mascotas, será ágil y fácil. Sólo diligencia los datos solicitados, sube una foto y listo.
+                  </div>
+                </div>
+
+                <div class="icon-box circled icon-box-animated" data-animation="fadeInRight" data-animation-delay="400">
+                  <div class="icon">
+                    <i class="entypo network"></i>
+                  </div>
+                  <div class="icon-box-body">
+                    <h4>Soporte 24 horas los 7 días de la semana</h4>
+                    <p>Tendrás acceso a soporte en cualquier hora del día, sobre cualquier inquietud o inconveniente.</p>
+                  </div>
+                </div>
+
+                <a href="admin/institutions/new" class="btn btn-primary">Comienza Aquí<i class="fa fa-arrow-circle-o-right fa-lg fa-right"></i></a>
+
+              </div>
+            </div>
+
+          </section>
+          <!-- Section / End -->
+
+
+          <!-- Light Section -->
+          <section class="section-light section-nomargin">
+        <div class="title-bordered" data-animation="fadeInUp" data-animation-delay="0">
+          <h2>¿Por qué escogernos?<small>Adopta-Me</small></h2>
+        </div>
+        <div class="row">
+          <div class="col-md-3" data-animation="fadeInDown" data-animation-delay="0">
+            <div class="icon-box filled centered lg circled icon-box-animated-inverse">
+              <div class="icon">
+                <i class="entypo chat"></i>
+              </div>
+              <div class="icon-box-body">
+                <h3>Soporte 24/7</h3>
+                <p>Soporte al usuario y a las fundaciones a todo momento para asesorias y ayudas.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3" data-animation="fadeInDown" data-animation-delay="200">
+            <div class="icon-box filled centered lg circled icon-box-animated-inverse">
+              <div class="icon">
+                <i class="entypo lock"></i>
+              </div>
+              <div class="icon-box-body">
+                <h3>Confiabilidad</h3>
+                <p>Fundaciones que cumplan con los requisitos requeridos para dar fiabilidad a los usuarios.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3" data-animation="fadeInDown" data-animation-delay="400">
+            <div class="icon-box filled centered lg circled icon-box-animated-inverse">
+              <div class="icon">
+                <i class="entypo thumbs-up"></i>
+              </div>
+              <div class="icon-box-body">
+                <h3>Fácil de usar</h3>
+                <p>Plataforma amigable para el usuario y para las fundaciones en su uso y manejo</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="icon-box filled centered lg circled icon-box-animated-inverse" data-animation="fadeInDown" data-animation-delay="600">
+              <div class="icon">
+                <i class="entypo docs"></i>
+              </div>
+              <div class="icon-box-body">
+                <h3>Muchas Opciones</h3>
+                <p>Al contar con diferentes fundaciones las posibilidades de encontrar una mascota acorde a tus necesidades es posible.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+          <!-- Light Section / End -->
+
+          <!-- Section -->
+          <section class="section section-nomargin">
+            <div class="title-bordered" data-animation="fadeInUp" data-animation-delay="0">
+              <h2>Nuestro Equipo <small>Adopta-me</small></h2>
+            </div>
+            <div class="row">
+              <div class="col-md-6" data-animation="fadeInLeft" data-animation-delay="0">
+                <div class="testimonial">
+                  <blockquote>
+                    <p>Fundadora de Adopta-Me, <br />dueña y amante de las mascotas. </p>
+                  </blockquote>
+                  <div class="bq-author">
+                    <figure class="author-img">
+                      <%= image_tag("mcrteam60x60.png", size: "auto") %>
+                    </figure>
+                    <h6>Maria Camila Ruiz Abondano</h6>
+                    <span class="bq-author-info">Founder and CEO</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6" data-animation="fadeInRight" data-animation-delay="0">
+                <div class="spacer-lg visible-sm visible-xs"></div>
+                <div class="testimonial">
+                  <blockquote>
+                    <p>Fundador de iPet Chicago,<br /> dueño y amante de las mascotas.</p>
+                  </blockquote>
+                  <div class="bq-author">
+                    <figure class="author-img">
+                      <%= image_tag("diegoteam60x60.png", :alt => "") %>
+                    </figure>
+                    <h6>Diego León</h6>
+                    <span class="bq-author-info">Co-Founder</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Section / End -->
+
+        </div>
+      </section>
+      <!-- Page Content / End -->
+
+
+
+
+
