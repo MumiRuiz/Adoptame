@@ -20,20 +20,22 @@
                         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
                       <% end %>
 
-                      <div class="field">
-                        <%= f.label :Contraseña%> <i>(Puedes dejarla en blanco si no deseas cambiarla)</i><br />
-                        <%= f.password_field :password, autocomplete: "off", placeholder: "Ingresa tu nueva contraseña" %>
-                      </div>
+                      <% if f.object.encrypted_password.present? %>
+                        <div class="field">
+                          <%= f.label :Contraseña%> <i>(Puedes dejarla en blanco si no deseas cambiarla)</i><br />
+                          <%= f.password_field :password, autocomplete: "off", placeholder: "Ingresa tu nueva contraseña" %>
+                        </div>
 
-                      <div class="field">
-                        <%= f.label :Confirma_tu_contraseña %><br />
-                        <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirma tu contraseña" %>
-                      </div>
+                        <div class="field">
+                          <%= f.label :Confirma_tu_contraseña %><br />
+                          <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirma tu contraseña" %>
+                        </div>
 
-                      <div class="field">
-                        <%= f.label :Contraseña_actual %> <i>(Necesitaremos de tu autorizacion para guardar los cambios)</i><br />
-                        <%= f.password_field :current_password, autocomplete: "off", placeholder: "Ingresa tu contraseña actual" %>
-                      </div>
+                        <div class="field">
+                          <%= f.label :Contraseña_actual %> <i>(Necesitaremos de tu autorizacion para guardar los cambios)</i><br />
+                          <%= f.password_field :current_password, autocomplete: "off", placeholder: "Ingresa tu contraseña actual" %>
+                        </div>
+                      <% end %>
 
                       <div class="form-group">                     
                         <%= f.submit "Actualizar",class: 'btn btn-success btn-block' %>
