@@ -36,23 +36,19 @@
 
             <li class= "divider"></li>
             <% if user_signed_in? %>
-            <li class="dropdown">
-
-              <%= link_to current_user.name , edit_user_registration_path, html: {class: "dropdown-toggle"} %>
-         
-              
-                
-            </li>
-            <li>
-              <%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete %>
-            </li>
-            <% else %>
+              <li class="dropdown">
+                <%= link_to current_user.name, edit_user_registration_path%>
+              </li>
+              <li>
+                <%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete %>
+              </li>
+              <% else %>
               <li class="active">
-              <%= link_to 'Regístrate', new_user_registration_path, html: {class: "btn btn-sm btn-warning"}%>
-            </li>
-            <li>
-              <%= link_to 'Iniciar Sesión', new_user_session_path, html: {class: "btn btn-sm btn-warning"}%>
-            </li>
+                <%= link_to 'Regístrate', new_user_registration_path, html: {class: "btn btn-sm btn-warning"}%>
+              </li>
+              <li>
+                <%= link_to 'Iniciar Sesión', new_user_session_path, html: {class: "btn btn-sm btn-warning"}%>
+              </li>
             <% end %>
           </ul>
 

@@ -19,16 +19,16 @@
 
 
                           <div class="form-group">
-                            <%= f.label :password,for:"inputPassword1", class: "col-sm-2 control-label"  %>
+                            <%= f.label :Contraseña,for:"inputPassword1", class: "col-sm-2 control-label"  %>
                             <div class="col-sm-10">
                               <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder:"Digita tu Contraseña, minimo 8 caracteres", id: "inputPassword1", autofocus: true   %>
                             </div>  
                           </div>
 
                           <div class="form-group">
-                              <%= f.label :Confirma_Tu_Contrasena, for:"PasswordConfirm",class: "col-sm-2 control-label" %>
+                              <%= f.label :Confirma_Tu_Contraseña, for:"PasswordConfirm",class: "col-sm-2 control-label" %>
                             <div class="col-sm-10">
-                              <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder:"Digita tu Contraseña", id: "PasswordConfirm" %>
+                              <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder:"Necesitamos estar seguros que recuerdas tu Contraseña", id: "PasswordConfirm" %>
                             </div>
                           </div>
 
@@ -51,7 +51,11 @@
       </div>    
     </div>
 
-<!--   <div class="field">
+<!--   
+  antiguos links de devise
+
+
+<div class="field">
   
   <%#= f.email_field :email%>
 </div>
