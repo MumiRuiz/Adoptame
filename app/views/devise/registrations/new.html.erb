@@ -1,29 +1,78 @@
-<h2>Sign up</h2>
+    <div class="container">  
+      <div class="content">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="panel-heading">
+                            <h4>Registrate</h4>
+                        </div>
+                          <%= form_for(resource, as: resource_name, url: registration_path(resource_name),role:"form", class: "form-horizontal") do |f| %>
+                            <%= devise_error_messages! %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+                          <div class="form-group">                  
+                            <%= f.label :email,for:"inputEmail1", class: "col-sm-2 control-label" %>
+                            <div class="col-sm-10">
+                                <%= f.email_field :email, autofocus: true, class: "form-control", class:"form-control", id:"inputEmail1", placeholder:"Digita tu email", id:"inputEmail1"%>
+                            </div>
+                          </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @validatable %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+                          <div class="form-group">
+                            <%= f.label :password,for:"inputPassword1", class: "col-sm-2 control-label"  %>
+                            <div class="col-sm-10">
+                              <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder:"Digita tu Contraseña, minimo 8 caracteres", id: "inputPassword1", autofocus: true   %>
+                            </div>  
+                          </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+                          <div class="form-group">
+                              <%= f.label :Confirma_Tu_Contrasena, for:"PasswordConfirm",class: "col-sm-2 control-label" %>
+                            <div class="col-sm-10">
+                              <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder:"Digita tu Contraseña", id: "PasswordConfirm" %>
+                            </div>
+                          </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+                          <div class="form-group">
+                            <p class="help-block">Te enviaremos un correo de verificacion.</p>
+                          </div>
 
-<%= render "devise/shared/links" %>
+                          <div class="form-group">
+                              <div class="col-lg-offset-2 col-lg-10">
+                                  <%= f.submit "Iniciar Sesión", class: 'btn btn-success btn-block' %>
+                              </div>
+                          </div>
+
+                        <%= render "devise/shared/links" %>
+                        <% end %>
+                      </div>
+                </div>
+            </div>
+        </div>
+      </div>    
+    </div>
+
+<!--   <div class="field">
+  
+  <%#= f.email_field :email%>
+</div>
+
+<div class="field">
+  
+  <%# if @validatable %>
+  <em>(<%#= @minimum_password_length %> characters minimum)</em>
+  <%#end %>
+  <%#= f.password_field :password, autocomplete: "off" %>
+</div>
+
+<div class="field">
+  <%#= f.label :password_confirmation %><br />
+  <%#= f.password_field :password_confirmation, autocomplete: "off" %>
+</div>
+
+<div class="actions">
+  <%#= f.submit "Sign up" %>
+</div>
+
+<%# end %>
+<%#= render "devise/shared/links" %>
+ -->
