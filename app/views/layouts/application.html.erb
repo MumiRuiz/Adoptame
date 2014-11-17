@@ -35,21 +35,14 @@
 
 
             <li class= "divider"></li>
-            <% if user_signed_in? %>
-              <li class="dropdown">
-                <%= link_to current_user.name, edit_user_registration_path%>
-              </li>
-              <li>
-                <%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete %>
-              </li>
+              <% if user_signed_in? %>
+              Signed in as <%= current_user.name %>. Not you?
+              <%= link_to "Sign out", destroy_user_session_path,:method => :delete %>
               <% else %>
-              <li class="active">
-                <%= link_to 'Regístrate', new_user_registration_path, html: {class: "btn btn-sm btn-warning"}%>
-              </li>
-              <li>
-                <%= link_to 'Iniciar Sesión', new_user_session_path, html: {class: "btn btn-sm btn-warning"}%>
-              </li>
-            <% end %>
+              <%= link_to "Sign up", new_user_registration_path %> or
+              <%= link_to "Sign in", new_user_session_path %>
+              <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>
+              <% end %>
           </ul>
 
 
@@ -155,11 +148,15 @@
     <div class="row">
       <div class="columns large-12"></div>
         <% flash.each do |type, message| %>
-        <div data-alert class="alert-box radius <%= flass_class(type) %>">
-          <%#= message %>
-          <a href="#" class="close">&times;</a>
-        </div>
-        <% end %>
+          <div class="container">
+            <div class="span4">
+              <div data-alert class="alert <%= flash_class(type) %>">
+                <%= message %>
+                <button type="button" class="close" data-dismiss="alert">×</button>
+              </div>
+              <% end %>
+            </div>
+          </div>    
         <%= yield %>
       </div>
 

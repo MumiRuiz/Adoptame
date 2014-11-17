@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
 
   get 'static_pages/services'
   get 'static_pages/faq'
@@ -16,6 +16,7 @@ Rails.application.routes.draw do
    end
   end
   
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
