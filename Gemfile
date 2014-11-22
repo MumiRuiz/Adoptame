@@ -79,5 +79,6 @@ end
 
 gem 'ransack'
 gem 'better_errors'
+gem 'cancancan'
 
 
