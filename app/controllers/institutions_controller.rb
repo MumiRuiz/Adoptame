@@ -1,5 +1,8 @@
 class InstitutionsController < ApplicationController
   before_action :set_institution, only: [:show, :edit, :update, :destroy]
+  
+  #Verifica si se tiene autorizacion para estas acciones 
+  load_and_authorize_resource
 
   # GET /institutions
   # GET /institutions.json
@@ -28,7 +31,7 @@ class InstitutionsController < ApplicationController
 
     respond_to do |format|
       if @institution.save
-        format.html { redirect_to @institution, notice: 'Institution was successfully created.' }
+        format.html { redirect_to @institution, notice: 'Institucion creada.' }
         format.json { render :show, status: :created, location: @institution }
       else
         format.html { render :new }
