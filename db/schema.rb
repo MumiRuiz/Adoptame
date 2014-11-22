@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141107051858) do
+ActiveRecord::Schema.define(version: 20141122042211) do
 
   create_table "adoptions", force: true do |t|
     t.string   "user_description"
@@ -25,6 +25,17 @@ ActiveRecord::Schema.define(version: 20141107051858) do
   add_index "adoptions", ["institution_id"], name: "index_adoptions_on_institution_id"
   add_index "adoptions", ["pet_id"], name: "index_adoptions_on_pet_id"
   add_index "adoptions", ["user_id"], name: "index_adoptions_on_user_id"
+
+  create_table "authentications", force: true do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "index"
+    t.string   "create"
+    t.string   "destroy"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "institutions", force: true do |t|
     t.string   "name"
@@ -79,6 +90,9 @@ ActiveRecord::Schema.define(version: 20141107051858) do
     t.string   "confirmation_token"
     t.string   "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "role"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
