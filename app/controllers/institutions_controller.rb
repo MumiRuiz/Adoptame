@@ -2,7 +2,7 @@ class InstitutionsController < ApplicationController
   before_action :set_institution, only: [:show, :edit, :update, :destroy]
   
   #Verifica si se tiene autorizacion para estas acciones 
-  #load_and_authorize_resource
+  load_and_authorize_resource
 
   # GET /institutions
   # GET /institutions.json
@@ -24,7 +24,7 @@ class InstitutionsController < ApplicationController
   # GET /institutions/1/edit
   def edit
     @institution = Institution.find(params[:id])
-    authorize! :show, @institution
+    #authorize! :edit, @institution
   end
 
   # POST /institutions
