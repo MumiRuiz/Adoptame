@@ -6,8 +6,8 @@ class ApplicationController < ActionController::Base
 	protect_from_forgery with: :exception
 
 	#Revisa el role de cada usuario para cada accion
-	check_authorization
-	
+	#check_authorization
+
 	#Imprime una exepcion si la autenticacion de admin falla
 	rescue_from CanCan::AccessDenied do |exception|
     	redirect_to root_url, :alert => exception.message
