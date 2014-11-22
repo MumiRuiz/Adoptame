@@ -44,7 +44,7 @@
                           <div class="form-group">
                               <div class="col-lg-offset-2 col-lg-10">  
                                 <!-- Permite seleccionar el tipo de usuario -->
-                                <%= f.collection_select :role, User::ROLES, :to_s, lambda{|i| i.to_s.humanize} %>
+                                <%= f.collection_select :role, User::ROLES, :to_s, :humanize %>
                               </div>
                           </div>          
                         <%= render "devise/shared/links" %>
