@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   resources :institutions
   resources :users
 
+  root to: 'articles#index'
+  resources :articles
+
   resources :pet do
     collection do
       match 'search' => 'pet#search', via: [:get, :post], as: :search

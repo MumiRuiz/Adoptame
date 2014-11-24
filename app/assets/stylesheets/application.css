@@ -19,6 +19,7 @@
  *= require theme
  *= require theme-elements
  *= require animate.min
+ *= require screen
  *= require_tree .
  */
 
