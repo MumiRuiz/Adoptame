@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20141129224224) do
     t.datetime "updated_at", null: false
   end
 
+
   create_table "comments", force: true do |t|
     t.string   "author_name"
     t.text     "body"
