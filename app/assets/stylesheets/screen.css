@@ -160,11 +160,11 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 		}
 
 	a{
-		color:#2d4159
+		color:#98be2f
 		}
 
 	a:hover{
-		color:#233245
+		color:#2C2C2C
 		}
 	p.flash{
 		-moz-box-shadow:rgba(0, 0, 0, 0.5) 0 1px 3px;
@@ -257,7 +257,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 		}*/
 
 	h2,h3,h4{
-		color:#2d4159;
+		color:#98be2f;
 		font-size:1.3em;
 		line-height:1.5em;
 		margin:.2em 0 .5em
@@ -269,7 +269,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 		background:#f5f5f5;
 		padding:1em 0;
 		border-bottom:1px dashed #ddd;
-		color:#6c7c9a
+		color:#65E035
 		}
 
 	.comment p{
@@ -278,7 +278,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 		}
 
 	.comment p:first-child{
-		font-weight:bold;color:#2d4159;
+		font-weight:bold;color:#98be2f;
 		padding-left:0;border:0;
 		padding-bottom:1em
 		}
@@ -330,7 +330,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 		}
 
 	.top-button:active,a.new_article:active,.article_actions a[href$='edit']:active,.article_actions a[data-method='delete']:active{
-		background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #d9d9d9), color-stop(100%, #f5f5f5));
+		background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #F5F5F5), color-stop(100%, #65E035));
 		background-image:-moz-linear-gradient(#d9d9d9,#f5f5f5);
 		background-image:linear-gradient(#d9d9d9,#f5f5f5)
 		}
@@ -398,7 +398,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 	#articles li > a:first-child{
 		font-weight:bold;
 		display:block;
-		color:#2d4159;
+		color:#98be2f;
 		padding-bottom:.1em
 		}
 
@@ -491,7 +491,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 			}
 
 	#sidebar ul a{
-		color:#6c7c9a
+		color:#98be2f
 		}
 
 	.input,form input[type=text],form input[type=password],form textarea{
@@ -509,7 +509,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 		padding:.3em .4em;
 		border:1px solid #ccc;
 		background-color:#f5f5f5;
-		color:#1f2d3e;
+		color:#98be2f;
 		font-size:1.3em
 		}
 
@@ -519,7 +519,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 		-webkit-box-shadow:rgba(129, 177, 223, 0.7) 0 0 5px 1px inset;
 		-o-box-shadow:rgba(129, 177, 223, 0.7) 0 0 5px 1px inset;
 		box-shadow:rgba(129, 177, 223, 0.7) 0 0 5px 1px inset;
-		border-color:#81b1df;background-color:#fff
+		border-color:#98be2f;background-color:#fff
 		}
 
 	form input[type=text], form input[type=password]{
@@ -532,7 +532,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 		}
 
 	form label{
-		color:#6c7c9a;
+		color:#98be2f;
 		font-size:.9em;
 		font-weight:bold;line-height:1.5em;
 		padding-bottom:.2em;display:inline-block;
@@ -552,10 +552,10 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 		-khtml-border-radius:6px;
 		border-radius:6px;font-size:18px;
 		line-height:1.2em;padding:0.3em 1em;
-		border-width:1px;background-color:#134e89;
-		background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #81a2c3), color-stop(10%, #4b749e), color-stop(50%, #2d4660), color-stop(50%, #283f55), color-stop(100%, #395878));
-		background-image:-moz-linear-gradient(#81a2c3,#4b749e 10%,#2d4660 50%,#283f55 50%,#395878);
-		background-image:linear-gradient(#81a2c3,#4b749e 10%,#2d4660 50%,#283f55 50%,#395878);
+		border-width:1px;background-color:#98be2f;
+		background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(5%, #000000), color-stop(10%, #6B8F08), color-stop(20%, #86AC1C), color-stop(40%, #BDEE36), color-stop(100%, #C0E55B));
+		background-image:-moz-linear-gradient(#000000,#6B8F08 20%,#86AC1C 40%,#BDEE36 60%,#C0E55B);
+		background-image:linear-gradient(#000000,#6B8F08 20%,#86AC1C 40%,#BDEE36 60%,#C0E55B);
 		border-color:#192836;
 		text-shadow:#030e19 0px 1px 1px;
 		-moz-box-shadow:rgba(255, 255, 255, 0.306) 0 0 0.1em 1px inset;
@@ -576,9 +576,9 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 	input[type=submit]:hover,input[type=submit]:focus{
 		background-color:#11467c;
-		background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #769bbf), color-stop(10%, #466d94), color-stop(50%, #283f55), color-stop(50%, #23374b), color-stop(100%, #34516d));
-		background-image:-moz-linear-gradient(#769bbf,#466d94 10%,#283f55 50%,#23374b 50%,#34516d);
-		background-image:linear-gradient(#769bbf,#466d94 10%,#283f55 50%,#23374b 50%,#34516d);
+		background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(5%, #000000), color-stop(10%, #6B8F08), color-stop(20%, #86AC1C), color-stop(40%, #BDEE36), color-stop(100%, #C0E55B));
+		background-image:-moz-linear-gradient(#000000,#6B8F08 20%,#86AC1C 40%,#BDEE36 60%,#C0E55B);
+		background-image:linear-gradient(#000000,#6B8F08 20%,#86AC1C 40%,#BDEE36 6;
 		border-color:#15202c;text-shadow:#02070c 0px 1px 1px
 		}
 
@@ -587,11 +587,10 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 		}
 
 	input[type=submit]:active{
-		background-color:#0f3f6e;
-		background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #283f55), color-stop(30%, #2b445c), color-stop(50%, #253a4e), color-stop(50%, #203244), color-stop(100%, #355371));
-		background-image:-moz-linear-gradient(#283f55,#2b445c 30%,#253a4e 50%,#203244 50%,#355371);
-		background-image:linear-gradient(#283f55,#2b445c 30%,#253a4e 50%,#203244 50%,#355371);
-		border-color:#101821;text-shadow:#000 0px -1px -1px;
+		background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #65E035), color-stop(10%, #4BBC1F), color-stop(50%, #339B0A), color-stop(50%, #258300), color-stop(100%, #0B2800));
+		background-image:-moz-linear-gradient(#65E035,#4BBC1F 10%,#339B0A 50%,#258300 50%,#0B2800);
+		background-image:linear-gradient(#65E035,#4BBC1F 10%,#339B0A 50%,#258300 50%,#0B2800);
+		border-color:#15202c;text-shadow:#000 0px 1px 1px
 		-moz-box-shadow:#192836 0 0.08em 0.2em 1px inset;
 		-webkit-box-shadow:#192836 0 0.08em 0.2em 1px inset;
 		-o-box-shadow:#192836 0 0.08em 0.2em 1px inset;
