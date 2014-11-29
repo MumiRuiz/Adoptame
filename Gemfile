@@ -52,6 +52,10 @@ gem "twitter-bootstrap-rails"
 gem 'paperclip'
 gem 'aws-sdk'
 
+#NEWSLETTER
+gem 'maktoub'
+gem 'delayed_job_active_record'
+
 
 group :test do
   gem 'rspec', '~> 3.1.0'	
