@@ -1,4 +1,7 @@
 class Pet < ActiveRecord::Base
+  #list en orden ascendente las mascotas
+  default_scope { order(created_at: :desc)}
+
 	has_many :adoptions
 	has_many :institutions
 	has_many :users, through: :adoptions
