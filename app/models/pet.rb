@@ -4,7 +4,8 @@ class Pet < ActiveRecord::Base
 
 	has_many :adoptions
 	has_many :institutions
-	has_many :users, through: :adoptions
+	belongs_to :user#, through: :adoptions
+  belongs_to :institution
 
 	#validates :id, presence: true
   	validates :name, presence: true

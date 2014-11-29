@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141123220751) do
+ActiveRecord::Schema.define(version: 20141129190227) do
 
   create_table "adoptions", force: true do |t|
     t.string   "user_description"
@@ -29,6 +29,17 @@ ActiveRecord::Schema.define(version: 20141123220751) do
   create_table "articles", force: true do |t|
     t.string   "title"
     t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "authentications", force: true do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "index"
+    t.string   "create"
+    t.string   "destroy"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -56,11 +67,13 @@ ActiveRecord::Schema.define(version: 20141123220751) do
     t.string   "gender"
     t.string   "size"
     t.text     "story"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.string   "city"
     t.string   "country"
     t.string   "region"
+    t.integer  "user_id"
+    t.integer  "institution_id"
   end
 
   create_table "users", force: true do |t|
@@ -86,6 +99,9 @@ ActiveRecord::Schema.define(version: 20141123220751) do
     t.string   "confirmation_token"
     t.string   "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "role"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
