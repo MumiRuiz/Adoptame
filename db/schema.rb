@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141129224224) do
+ActiveRecord::Schema.define(version: 20141130000837) do
 
   create_table "adoptions", force: true do |t|
     t.string   "user_description"
@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 20141129224224) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
 
   create_table "comments", force: true do |t|
     t.string   "author_name"
@@ -74,6 +73,22 @@ ActiveRecord::Schema.define(version: 20141129224224) do
     t.string   "region"
     t.integer  "user_id"
     t.integer  "institution_id"
+  end
+
+  create_table "taggings", force: true do |t|
+    t.integer  "tag_id"
+    t.integer  "article_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "taggings", ["article_id"], name: "index_taggings_on_article_id"
+  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id"
+
+  create_table "tags", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: true do |t|
