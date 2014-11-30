@@ -16,6 +16,7 @@ class Admin::PetsController < ApplicationController
   # GET /admin/pets/new
   def new
     @admin_pet = Pet.new
+    @institutions = Institution.all.map { |institutions| [institutions.name, Institution.name]}
   end
 
   # GET /admin/pets/1/edit
