@@ -1,0 +1,189 @@
+<%= form_for(@adoption_form) do |f| %>
+  <% if @adoption_form.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@adoption_form.errors.count, "error") %> prohibited this adoption_form from being saved:</h2>
+
+      <ul>
+      <% @adoption_form.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :neighborhood %><br>
+    <%= f.text_field :neighborhood %>
+  </div>
+  <div class="field">
+    <%= f.label :region %><br>
+    <%= f.text_field :region %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :mobile_phone %><br>
+    <%= f.text_field :mobile_phone %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br>
+    <%= f.text_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :ingresos_mensuales %><br>
+    <%= f.text_field :ingresos_mensuales %>
+  </div>
+  <div class="field">
+    <%= f.label :profesion %><br>
+    <%= f.text_field :profesion %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo_de_vivienda %><br>
+    <%= f.text_field :tipo_de_vivienda %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo_de_propiedad_de_la_vivienda %><br>
+    <%= f.text_field :tipo_de_propiedad_de_la_vivienda %>
+  </div>
+  <div class="field">
+    <%= f.label :question_1 %><br>
+    <%= f.text_field :question_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_2 %><br>
+    <%= f.text_field :question_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_3 %><br>
+    <%= f.text_field :question_3 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_4 %><br>
+    <%= f.text_field :question_4 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_5 %><br>
+    <%= f.text_field :question_5 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_6 %><br>
+    <%= f.text_field :question_6 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_7 %><br>
+    <%= f.text_field :question_7 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_8 %><br>
+    <%= f.text_field :question_8 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_9 %><br>
+    <%= f.text_field :question_9 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_10 %><br>
+    <%= f.text_field :question_10 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_11 %><br>
+    <%= f.text_field :question_11 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_12 %><br>
+    <%= f.text_field :question_12 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_13 %><br>
+    <%= f.text_field :question_13 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_14 %><br>
+    <%= f.text_field :question_14 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_15 %><br>
+    <%= f.text_field :question_15 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_16 %><br>
+    <%= f.text_field :question_16 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_17 %><br>
+    <%= f.text_field :question_17 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_18 %><br>
+    <%= f.text_field :question_18 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_19 %><br>
+    <%= f.text_field :question_19 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_20 %><br>
+    <%= f.text_field :question_20 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_21 %><br>
+    <%= f.text_field :question_21 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_22 %><br>
+    <%= f.text_field :question_22 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_23 %><br>
+    <%= f.text_field :question_23 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_24 %><br>
+    <%= f.text_field :question_24 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_25 %><br>
+    <%= f.text_field :question_25 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_26 %><br>
+    <%= f.text_field :question_26 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_27 %><br>
+    <%= f.text_field :question_27 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_28 %><br>
+    <%= f.text_field :question_28 %>
+  </div>
+  <div class="field">
+    <%= f.label :pets_id %><br>
+    <%= f.text_field :pets_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

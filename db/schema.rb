@@ -11,7 +11,61 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141129190227) do
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20141129235502) do
+
+  create_table "adoption_forms", force: true do |t|
+    t.string   "name"
+    t.string   "last_name"
+    t.string   "address"
+    t.string   "neighborhood"
+    t.string   "region"
+    t.string   "city"
+    t.string   "phone"
+    t.string   "mobile_phone"
+    t.string   "email"
+    t.string   "age"
+    t.string   "ingresos_mensuales"
+    t.string   "profesion"
+    t.string   "tipo_de_vivienda"
+    t.string   "tipo_de_propiedad_de_la_vivienda"
+    t.string   "question_1"
+    t.string   "question_2"
+    t.string   "question_3"
+    t.string   "question_4"
+    t.string   "question_5"
+    t.string   "question_6"
+    t.string   "question_7"
+    t.string   "question_8"
+    t.string   "question_9"
+    t.string   "question_10"
+    t.string   "question_11"
+    t.string   "question_12"
+    t.string   "question_13"
+    t.string   "question_14"
+    t.string   "question_15"
+    t.string   "question_16"
+    t.string   "question_17"
+    t.string   "question_18"
+    t.string   "question_19"
+    t.string   "question_20"
+    t.string   "question_21"
+    t.string   "question_22"
+    t.string   "question_23"
+    t.string   "question_24"
+    t.string   "question_25"
+    t.string   "question_26"
+    t.string   "question_27"
+    t.string   "question_28"
+    t.integer  "pets_id"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+  end
+
+  add_index "adoption_forms", ["pets_id"], name: "index_adoption_forms_on_pets_id"
+=======
+ActiveRecord::Schema.define(version: 20141129224224) do
+>>>>>>> ca3f9663f970a7fb8eb6965926f346aef59493ec
 
   create_table "adoptions", force: true do |t|
     t.string   "user_description"
@@ -32,6 +86,17 @@ ActiveRecord::Schema.define(version: 20141129190227) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+
+  create_table "comments", force: true do |t|
+    t.string   "author_name"
+    t.text     "body"
+    t.integer  "article_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "comments", ["article_id"], name: "index_comments_on_article_id"
 
   create_table "institutions", force: true do |t|
     t.string   "name"
