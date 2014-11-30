@@ -1,0 +1,113 @@
+
+
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Adoption Forms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Last name</th>
+      <th>Address</th>
+      <th>Neighborhood</th>
+      <th>Region</th>
+      <th>City</th>
+      <th>Phone</th>
+      <th>Mobile phone</th>
+      <th>Email</th>
+      <th>Age</th>
+      <th>Ingresos mensuales</th>
+      <th>Profesion</th>
+      <th>Tipo de vivienda</th>
+      <th>Tipo de propiedad de la vivienda</th>
+      <th>Question 1</th>
+      <th>Question 2</th>
+      <th>Question 3</th>
+      <th>Question 4</th>
+      <th>Question 5</th>
+      <th>Question 6</th>
+      <th>Question 7</th>
+      <th>Question 8</th>
+      <th>Question 9</th>
+      <th>Question 10</th>
+      <th>Question 11</th>
+      <th>Question 12</th>
+      <th>Question 13</th>
+      <th>Question 14</th>
+      <th>Question 15</th>
+      <th>Question 16</th>
+      <th>Question 17</th>
+      <th>Question 18</th>
+      <th>Question 19</th>
+      <th>Question 20</th>
+      <th>Question 21</th>
+      <th>Question 22</th>
+      <th>Question 23</th>
+      <th>Question 24</th>
+      <th>Question 25</th>
+      <th>Question 26</th>
+      <th>Question 27</th>
+      <th>Question 28</th>
+      <th>Pets</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @adoption_forms.each do |adoption_form| %>
+      <tr>
+        <td><%= adoption_form.name %></td>
+        <td><%= adoption_form.last_name %></td>
+        <td><%= adoption_form.address %></td>
+        <td><%= adoption_form.neighborhood %></td>
+        <td><%= adoption_form.region %></td>
+        <td><%= adoption_form.city %></td>
+        <td><%= adoption_form.phone %></td>
+        <td><%= adoption_form.mobile_phone %></td>
+        <td><%= adoption_form.email %></td>
+        <td><%= adoption_form.age %></td>
+        <td><%= adoption_form.ingresos_mensuales %></td>
+        <td><%= adoption_form.profesion %></td>
+        <td><%= adoption_form.tipo_de_vivienda %></td>
+        <td><%= adoption_form.tipo_de_propiedad_de_la_vivienda %></td>
+        <td><%= adoption_form.question_1 %></td>
+        <td><%= adoption_form.question_2 %></td>
+        <td><%= adoption_form.question_3 %></td>
+        <td><%= adoption_form.question_4 %></td>
+        <td><%= adoption_form.question_5 %></td>
+        <td><%= adoption_form.question_6 %></td>
+        <td><%= adoption_form.question_7 %></td>
+        <td><%= adoption_form.question_8 %></td>
+        <td><%= adoption_form.question_9 %></td>
+        <td><%= adoption_form.question_10 %></td>
+        <td><%= adoption_form.question_11 %></td>
+        <td><%= adoption_form.question_12 %></td>
+        <td><%= adoption_form.question_13 %></td>
+        <td><%= adoption_form.question_14 %></td>
+        <td><%= adoption_form.question_15 %></td>
+        <td><%= adoption_form.question_16 %></td>
+        <td><%= adoption_form.question_17 %></td>
+        <td><%= adoption_form.question_18 %></td>
+        <td><%= adoption_form.question_19 %></td>
+        <td><%= adoption_form.question_20 %></td>
+        <td><%= adoption_form.question_21 %></td>
+        <td><%= adoption_form.question_22 %></td>
+        <td><%= adoption_form.question_23 %></td>
+        <td><%= adoption_form.question_24 %></td>
+        <td><%= adoption_form.question_25 %></td>
+        <td><%= adoption_form.question_26 %></td>
+        <td><%= adoption_form.question_27 %></td>
+        <td><%= adoption_form.question_28 %></td>
+        <td><%= adoption_form.pets %></td>
+        <td><%= link_to 'Show', adoption_form %></td>
+        <td><%= link_to 'Edit', edit_adoption_form_path(adoption_form) %></td>
+        <td><%= link_to 'Destroy', adoption_form, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Adoption form', new_adoption_form_path %>

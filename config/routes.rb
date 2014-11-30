@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :adoption_forms
+
   devise_for :users
 
   get 'static_pages/services'
