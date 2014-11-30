@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Admin Institutions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th>Country</th>
+      <th>State</th>
+      <th>City</th>
+      <th>Website</th>
+      <th>Manager</th>
+      <th>Address</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_institutions.each do |admin_institution| %>
+      <tr>
+        <td><%= admin_institution.name %></td>
+        <td><%= admin_institution.username %></td>
+        <td><%= admin_institution.email %></td>
+        <td><%= admin_institution.password %></td>
+        <td><%= admin_institution.country %></td>
+        <td><%= admin_institution.state %></td>
+        <td><%= admin_institution.city %></td>
+        <td><%= admin_institution.website %></td>
+        <td><%= admin_institution.manager %></td>
+        <td><%= admin_institution.address %></td>
+        <td><%= admin_institution.description %></td>
+        <td><%= link_to 'Show', admin_institution %></td>
+        <td><%= link_to 'Edit', edit_admin_institution_path(admin_institution) %></td>
+        <td><%= link_to 'Destroy', admin_institution, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Institution', new_admin_institution_path %>
