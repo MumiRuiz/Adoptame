@@ -1,7 +1,32 @@
-<div class="container">
-  <h1>Listing Admin Pets</h1>
+ <div class="main" role="main">
 
-  <table class="table table-striped">
+ <!-- Page Heading -->
+      <section class="page-heading">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <h1>Administrador de  Mascotas</h1>
+            </div>
+                <div class="col-md-6">
+                   <ul class="breadcrumb">
+                      <li><a href="/">Inicio</a></li>
+                      <li><a href="about">¿Quiénes Somos?</a></li>
+                      <li class="active">Adminitrador de Mascotas</li>
+                   </ul>
+                </div>
+             </div>
+        </div>
+      </section>
+      <!-- Page Heading / End -->
+
+             <!-- Page Content -->
+      <section class="page-content">
+        <div class="container">
+
+            <div class="table-responsive">
+              <table class="job-manager-jobs table table-bordered table-striped">
+
+
     <thead>
       <tr>
         <th>Name</th>
@@ -44,4 +69,8 @@
   <br>
 
   <%= link_to 'New Pet', new_admin_pet_path %>
-</div>
+          
+            </div>
+          </div>
+        </div>
+      </section>

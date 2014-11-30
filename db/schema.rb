@@ -11,7 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20141130000837) do
 
   create_table "adoption_forms", force: true do |t|
@@ -63,7 +62,6 @@ ActiveRecord::Schema.define(version: 20141130000837) do
   end
 
   add_index "adoption_forms", ["pets_id"], name: "index_adoption_forms_on_pets_id"
-
 
   create_table "adoptions", force: true do |t|
     t.string   "user_description"
