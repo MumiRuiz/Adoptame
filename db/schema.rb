@@ -11,7 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20141129235502) do
 
   create_table "adoption_forms", force: true do |t|
@@ -63,9 +62,6 @@ ActiveRecord::Schema.define(version: 20141129235502) do
   end
 
   add_index "adoption_forms", ["pets_id"], name: "index_adoption_forms_on_pets_id"
-=======
-ActiveRecord::Schema.define(version: 20141129224224) do
->>>>>>> ca3f9663f970a7fb8eb6965926f346aef59493ec
 
   create_table "adoptions", force: true do |t|
     t.string   "user_description"
@@ -86,7 +82,6 @@ ActiveRecord::Schema.define(version: 20141129224224) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
 
   create_table "comments", force: true do |t|
     t.string   "author_name"
