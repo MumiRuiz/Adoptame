@@ -2,13 +2,12 @@
   <div class="content">
     <div class="row">
 </br>
-<%= link_to "Create a New Tag", new_tag_path, class: "new_tag" %>
-</br>
-	<h1>Articles Tagged  <%= @tags.all %></h1>
+	<h1>Articles Tagged </h1>
+<h1>Articles Tagged with <%= @tags.name %></h1>
 
 <ul>
-  <% @tags.each do |tag| %>
-    <li><%= link_to tag.articles, article_path(@articles) %></li>
+  <% @tags.each do |article| %>
+    <li><%= link_to tag.article.title, article_path(article) %></li>
   <% end %>
 </ul>
 			
