@@ -1,0 +1,17 @@
+<div class="container">  
+  <div class="content">
+    <div class="row">
+</br>
+<%= link_to "Create a New Tag", new_tag_path, class: "new_tag" %>
+</br>
+	<h1>Articles Tagged  <%= @tags.all %></h1>
+
+<ul>
+  <% @tags.each do |tag| %>
+    <li><%= link_to tag.articles, article_path(@articles) %></li>
+  <% end %>
+</ul>
+			
+    </div>
+  </div>
+</div>

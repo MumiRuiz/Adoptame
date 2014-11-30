@@ -24,10 +24,11 @@ Rails.application.routes.draw do
   resources :institutions
   resources :users
 
-  #root to: 'articles#index'
+  
   resources :articles do
     resources :comments
-  end
+  end 
+  resources :tags
 
   resources :pet do
     collection do
