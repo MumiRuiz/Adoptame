@@ -1,0 +1,270 @@
+    <div class="container">  
+      <div class="content">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="panel-heading">
+                   <h4>Completa el Proceso de Adopción</h4>
+                        </div>
+                        <%= form_for(@adoption_form) do |f| %>
+  <% if @adoption_form.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@adoption_form.errors.count, "error") %> prohibited this adoption_form from being saved:</h2>
+
+      <ul>
+      <% @adoption_form.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  				<div class="form-group">                  
+                            <%= f.label :name, class: "col-sm-2 control-label" %>
+                            <div class="col-sm-10">
+                                <%= f.text_field :name, autofocus: true, class: "form-control", class:"form-control", placeholder:"Escribe tu Nombre"%>
+                            </div>
+                </div>
+                <br>
+                <div class="form-group">                  
+                            <%= f.label :last_name, class: "col-sm-2 control-label" %>
+                            <div class="col-sm-10">
+                                <%= f.text_field :last_name, autofocus: true, class: "form-control", class:"form-control", placeholder:"Escribe tus Apellidos"%>
+                            </div>
+                </div>
+
+                <br>
+                <div class="form-group">                  
+                            <%= f.label :address, class: "col-sm-2 control-label" %>
+                            <div class="col-sm-10">
+                                <%= f.text_field :address, autofocus: true, class: "form-control", class:"form-control", placeholder:"Escribe tu Dirección"%>
+                            </div>
+                </div>
+
+                 <br>
+                <div class="form-group">                  
+                            <%= f.label :neighborhood , class: "col-sm-2 control-label" %>
+                            <div class="col-sm-10">
+                                <%= f.text_field :neighborhood , autofocus: true, class: "form-control", class:"form-control", placeholder:"Escribe tu Barrio"%>
+                            </div>
+                </div>
+                  <br>
+                <div class="form-group">                  
+                            <%= f.label :region, class: "col-sm-2 control-label" %>
+                            <div class="col-sm-10">
+                                <%= f.text_field :region, autofocus: true, class: "form-control", class:"form-control", placeholder:"Escribe tu Departamento"%>
+                            </div>
+                </div>
+
+                <br>
+                <div class="form-group">                  
+                            <%= f.label :city, class: "col-sm-2 control-label" %>
+                            <div class="col-sm-10">
+                                <%= f.text_field :city, autofocus: true, class: "form-control", class:"form-control", placeholder:"Escribe tu Ciudad"%>
+                            </div>
+                </div>
+                 <br>
+                <div class="form-group">                  
+                            <%= f.label :phone, class: "col-sm-2 control-label" %>
+                            <div class="col-sm-10">
+                                <%= f.text_field :phone, autofocus: true, class: "form-control", class:"form-control", placeholder:"Escribe tu Teléfono"%>
+                            </div>
+                </div>
+
+                   <br>
+                <div class="form-group">                  
+                            <%= f.label :mobile_phone, class: "col-sm-2 control-label" %>
+                            <div class="col-sm-10">
+                                <%= f.text_field :mobile_phone, autofocus: true, class: "form-control", class:"form-control", placeholder:"Escribe tu Celular"%>
+                            </div>
+                </div>
+
+                    <br>
+                <div class="form-group">                  
+                            <%= f.label :email, class: "col-sm-2 control-label" %>
+                            <div class="col-sm-10">
+                                <%= f.text_field :email, autofocus: true, class: "form-control", class:"form-control", placeholder:"Escribe tu Email"%>
+                            </div>
+                </div>
+                <br>
+                <div class="form-group">                  
+                            <%= f.label :age, class: "col-sm-2 control-label" %>
+                            <div class="col-sm-10">
+                                <%= f.text_field :age, autofocus: true, class: "form-control", class:"form-control", placeholder:"Escribe tu Edad"%>
+                            </div>
+                </div>
+
+                <br>
+                <div class="form-group">                  
+                            <%= f.label :ingresos_mensuales , class: "col-sm-2 control-label" %>
+                            <div class="col-sm-10">
+                                <%= f.text_field :ingresos_mensuales , autofocus: true, class: "form-control", class:"form-control", placeholder:"Escribe tus Ingresos Mensuales"%>
+                            </div>
+                </div>
+
+                 <br>
+                <div class="form-group">                  
+                            <%= f.label :profesion, class: "col-sm-2 control-label" %>
+                            <div class="col-sm-10">
+                                <%= f.text_field :profesion, autofocus: true, class: "form-control", class:"form-control", placeholder:"Escribe tu profesión"%>
+                            </div>
+                </div>
+                 <br>
+                <div class="form-group">                  
+                            <%= f.label :tipo_de_vivienda, class: "col-sm-2 control-label" %>
+                            <div class="col-sm-10">
+                                <%= f.text_field :tipo_de_vivienda, autofocus: true, class: "form-control", class:"form-control", placeholder:"Escribe tu tipo de Vivienda"%>
+                            </div>
+                </div>
+
+                <br>
+                <div class="form-group">                  
+                            <%= f.label :tipo_de_propiedad_de_la_vivienda, class: "col-sm-2 control-label" %>
+                            <div class="col-sm-10">
+                                <%= f.text_field :tipo_de_propiedad_de_la_vivienda, autofocus: true, class: "form-control", class:"form-control", placeholder:"Escribe tu tipo propiedad de la Vivienda"%>
+                            </div>
+                </div>
+
+				<br>
+                <div class="form-group">                  
+                            <%= f.label :question_1, "En caso de ser arrendado la vivienda el propietario sabe y esta de acuerdo con la integración de la mascota a la vivienda",  class: "col-sm-2 control-label" %>
+                            <div class="col-sm-10">
+                                <%= f.text_field :question_1, autofocus: true, class: "form-control", class:"form-control", placeholder:"Escribe tu tipo propiedad de la Vivienda"%>
+                            </div>
+                </div>
+                <br>
+                <div class="form-group">                  
+                            <%= f.label :question_2, "Tiene problemas que tengan problemas con las mascotas",  class: "col-sm-2 control-label" %>
+                            <div class="col-sm-10">
+                                <%= f.text_field :question_2, autofocus: true, class: "form-control", class:"form-control", placeholder:"Escribe tu tipo propiedad de la Vivienda"%>
+                            </div>
+                </div>
+
+  
+
+  <div class="field">
+    <%= f.label :question_3 %><br>
+    <%= f.text_field :question_3 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_4 %><br>
+    <%= f.text_field :question_4 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_5 %><br>
+    <%= f.text_field :question_5 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_6 %><br>
+    <%= f.text_field :question_6 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_7 %><br>
+    <%= f.text_field :question_7 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_8 %><br>
+    <%= f.text_field :question_8 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_9 %><br>
+    <%= f.text_field :question_9 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_10 %><br>
+    <%= f.text_field :question_10 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_11 %><br>
+    <%= f.text_field :question_11 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_12 %><br>
+    <%= f.text_field :question_12 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_13 %><br>
+    <%= f.text_field :question_13 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_14 %><br>
+    <%= f.text_field :question_14 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_15 %><br>
+    <%= f.text_field :question_15 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_16 %><br>
+    <%= f.text_field :question_16 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_17 %><br>
+    <%= f.text_field :question_17 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_18 %><br>
+    <%= f.text_field :question_18 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_19 %><br>
+    <%= f.text_field :question_19 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_20 %><br>
+    <%= f.text_field :question_20 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_21 %><br>
+    <%= f.text_field :question_21 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_22 %><br>
+    <%= f.text_field :question_22 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_23 %><br>
+    <%= f.text_field :question_23 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_24 %><br>
+    <%= f.text_field :question_24 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_25 %><br>
+    <%= f.text_field :question_25 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_26 %><br>
+    <%= f.text_field :question_26 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_27 %><br>
+    <%= f.text_field :question_27 %>
+  </div>
+  <div class="field">
+    <%= f.label :question_28 %><br>
+    <%= f.text_field :question_28 %>
+  </div>
+  <div class="field">
+    <%= f.label :pets_id %><br>
+    <%= f.text_field :pets_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', adoption_forms_path %>
+                      </div>
+                </div>
+            </div>
+        </div>
+      </div>    
+    </div>
+
+
+
+
+

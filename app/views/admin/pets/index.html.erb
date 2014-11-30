@@ -1,47 +1,47 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <h1>Listing Admin Pets</h1>
 
-<h1>Listing Admin Pets</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Kind</th>
-      <th>Age</th>
-      <th>Gender</th>
-      <th>Size</th>
-      <th>Story</th>
-      <th>City</th>
-      <th>Country</th>
-      <th>Region</th>
-      <th>User</th>
-      <th>Institution</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @admin_pets.each do |admin_pet| %>
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= admin_pet.name %></td>
-        <td><%= admin_pet.kind %></td>
-        <td><%= admin_pet.age %></td>
-        <td><%= admin_pet.gender %></td>
-        <td><%= admin_pet.size %></td>
-        <td><%= admin_pet.story %></td>
-        <td><%= admin_pet.city %></td>
-        <td><%= admin_pet.country %></td>
-        <td><%= admin_pet.region %></td>
-        <td><%= admin_pet.user %></td>
-        <td><%= admin_pet.institution %></td>
-        <td><%= link_to 'Show', admin_pet %></td>
-        <td><%= link_to 'Edit', edit_admin_pet_path(admin_pet) %></td>
-        <td><%= link_to 'Destroy', admin_pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th>Kind</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Size</th>
+        <th>Story</th>
+        <th>City</th>
+        <th>Country</th>
+        <th>Region</th>
+        <th>User</th>
+        <th>Institution</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @admin_pets.each do |admin_pet| %>
+        <tr>
+          <td><%= admin_pet.name %></td>
+          <td><%= admin_pet.kind %></td>
+          <td><%= admin_pet.age %></td>
+          <td><%= admin_pet.gender %></td>
+          <td><%= admin_pet.size %></td>
+          <td><%= admin_pet.story %></td>
+          <td><%= admin_pet.city %></td>
+          <td><%= admin_pet.country %></td>
+          <td><%= admin_pet.region %></td>
+          <td><%= admin_pet.user %></td>
+          <td><%= admin_pet.institution %></td>
+          <td><%= link_to 'Show', admin_pet %></td>
+          <td><%= link_to 'Edit', edit_admin_pet_path(admin_pet) %></td>
+          <td><%= link_to 'Destroy', admin_pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Pet', new_admin_pet_path %>
+  <br>
+
+  <%= link_to 'New Pet', new_admin_pet_path %>
+</div>
