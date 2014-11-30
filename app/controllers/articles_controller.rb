@@ -40,4 +40,6 @@ class ArticlesController < ApplicationController
 			format.html { redirect_to articles_url}
 		end	
 	end
+
+
 end
