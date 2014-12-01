@@ -1,19 +1,22 @@
 <div class="container">  
   <div class="content">
     <div class="row">
-</br>
-<%= link_to "Create a New Tag", new_tag_path, class: "new_tag" %>
-</br>
-	<h1>Articles Tagged  <%= @articles.name%></h1>
+			<div class="col-md-12 col-sm-3 text-center">
 
-<ul>
-  <% @tags.each do |tag| %>
-    <li>
-    	<%= link_to tag.name, tag_path(tag) %>
-    </li>
-</ul>
-  <% end %>
-			
+				<h2>Articles Tagged <span class="label label-success"><%= @articles.name%></span></h2>
+		
+				<div div class="col-md-10 col-sm-9">
+					<div class="panel panel-default">
+	  				<div class="panel-body">
+						  <% @tags.each do |tag| %>
+						    <span class="label label-info"><%= link_to tag.name, tag_path(tag) %></span>
+						  <% end %>
+						</div>  
+					</div>
+
+				</div>			
+				<%= link_to "Create a New Tag", new_tag_path, class: "btn btn-success pull-right" %>
+			</div>			
     </div>
   </div>
 </div>

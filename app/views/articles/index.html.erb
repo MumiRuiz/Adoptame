@@ -1,23 +1,23 @@
 <div class="container">  
   <div class="content">
     <div class="row">
-      
-</br>
-<%= link_to "Create a New Article", new_article_path, class: "new_article" %>
-</br>
-	<h1>All Articles</h1>
+      <div class="col-md-12 text-center"><h1>All Articles</h1></div>
+  			<div class="col-sm-8 col-sm-offset-1">
+          <div class="list-group" id="list1">
 
-		<ul id="articles">
-		  <% @articles.each do |article| %>
-		    <li>
-		      <%= link_to article.title, article_path(article), class: 'article_title' %>
-		    </li>
-		</br>
-		  <% end %>
+						
 
-		</ul>
+							<div class="list-group" id="list1">
+					  		<% @articles.each do |article| %>
+					        <%= link_to article.title, article_path(article), class: 'list-group-item' %>
+							  <% end %>
+						  </div>
 
-	  
-	</div>
+						  
+						<%= link_to "Create a New Article", new_article_path, class: "btn btn-success" %>
+					</div>
+				</div>
+			</div>			
+    </div>
   </div>
 </div>
