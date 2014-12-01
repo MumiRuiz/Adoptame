@@ -6,7 +6,8 @@
           <div class="list-group" id="list1">
 			  		<% @articles.each do |article| %>
 			        <%= link_to article.title, article_path(article), class: 'list-group-item' %>
-			        <p class="help-block"><%= time_ago_in_words(article.created_at, include_seconds: true)%></p>
+			        
+			    <p class="help-block"><%= time_ago_in_words(article.created_at, include_seconds: true)%></p>
 					  <% end %>
 				  </div>					  
 						<%= link_to "Create a New Article", new_article_path, class: "btn btn-success" %>
