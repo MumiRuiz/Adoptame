@@ -13,6 +13,13 @@ Rails.application.routes.draw do
 
   end
 
+   namespace :admin do
+    resources :institutions
+
+  end
+
+
+
   resources :pets
   resources :institutions
   resources :users
