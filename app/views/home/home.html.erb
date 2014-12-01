@@ -84,7 +84,7 @@
                       </figure>
                       <div class="job-listing-body">
                         <h4 class="name">
-                          <a href="job-profile.html"><%= pet.name %></a></h4>
+                          <%= link_to pet.name, pet_path(pet) %></h4>
                         <p><%=truncate(pet.story){ link_to "Continue", pet_path(pet)} %> 
                         </p>
                       </div>
