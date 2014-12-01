@@ -12,3 +12,12 @@ Pet.create(name: 'tony', kind: 'cat', age: '12', gender: 'male', size: 'small', 
 
 #Instituciones de ejemplo para la base de datos
 Institution.create(name: 'Huella roja', username: 'Senor Barriga', email: 'barriga@gmail.com', password: '1234567890', country: 'Colombia', state: 'Cundinamarca', city: 'Bogota', website: 'www.huellarojita.com', manager: 'Senor Barriga', address: 'Call 104 # 13d 77', description: 'Recojemos perritos')
+
+#Tags de ejemplo para la base de datos
+Tag.create(name: "Tag one")
+
+#Articles de ejemplo para la base de datos
+Article.create(title: "Primer tag", body: "Este es el primer tag de prueba")
+
+#article almacena tags separando cada palabra en un nuevo tag
+article = Article.create title: "A Sample Article for Tagging!", body: "Great article goes here", tag_list: "ruby, technology"

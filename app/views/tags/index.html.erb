@@ -4,7 +4,7 @@
 </br>
 <%= link_to "Create a New Tag", new_tag_path, class: "new_tag" %>
 </br>
-	<h1>Articles Tagged  <%= @tags.all %></h1>
+	<h1>Articles Tagged  <%= @tags.name%></h1>
 
 <ul>
   <% @tags.each do |tag| %>
