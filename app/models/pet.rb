@@ -1,9 +1,10 @@
 class Pet < ActiveRecord::Base
-  #list en orden ascendente las mascotas
+  #lista en orden descendente las mascotas
   default_scope { order(created_at: :desc)}
 
   before_destroy :ensure_not_referenced_by_any_adoption
   
+  has_one :adoption_form
   has_many :adoptions
   belongs_to :user#, through: :adoptions
   belongs_to :institution

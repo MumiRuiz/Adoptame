@@ -1,3 +1,3 @@
 class AdoptionForm < ActiveRecord::Base
-  belongs_to :pets
+  belongs_to :pet
 end
