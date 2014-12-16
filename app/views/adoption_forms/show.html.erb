@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+
+
 <p>
   <strong>Name:</strong>
   <%= @adoption_form.name %>
@@ -212,8 +214,5 @@
 
 <p>
   <strong>Pets:</strong>
-  <%= @adoption_form.pets %>
+  <%= @adoption_form.pet_id %>
 </p>
-
-<%= link_to 'Edit', edit_adoption_form_path(@adoption_form) %> |
-<%= link_to 'Back', adoption_forms_path %>

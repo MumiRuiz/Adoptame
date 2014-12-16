@@ -95,9 +95,9 @@
         <td><%= adoption_form.question_26 %></td>
         <td><%= adoption_form.question_27 %></td>
         <td><%= adoption_form.question_28 %></td>
-        <td><%= adoption_form.pets %></td>
-        <td><%= link_to 'Show', adoption_form %></td>
-        <td><%= link_to 'Edit', edit_adoption_form_path(adoption_form) %></td>
+        <td><%= adoption_form.pet_id %></td>
+        <td><%= link_to 'Show', pet_adoption_form_path(@adoption_form.pet, @adoption_form.pet) %></td>
+        <td><%= link_to 'Edit', edit_pet_adoption_form(@adoption_form.pet, @adoption_form.pet) %></td>
         <td><%= link_to 'Destroy', adoption_form, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

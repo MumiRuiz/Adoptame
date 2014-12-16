@@ -57,7 +57,7 @@ class PetsController < ApplicationController
      @pets = Pet.tagged_with(params[:search])
      
      if @pets.empty?
-       redirect_to home_index_path, alert: 'No se encontraron restaurantes con los criterios de busqueda ingresados. Por favor intente con otra palabra.' 
+       redirect_to home_index_path, alert: 'No se encontraron mascotas con los criterios de busqueda ingresados. Por favor intente con otra palabra.' 
      end
    end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141130000837) do
+ActiveRecord::Schema.define(version: 20141214185337) do
 
   create_table "adoption_forms", force: true do |t|
     t.string   "name"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20141130000837) do
     t.integer  "pets_id"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
+    t.integer  "pet_id"
   end
 
   add_index "adoption_forms", ["pets_id"], name: "index_adoption_forms_on_pets_id"

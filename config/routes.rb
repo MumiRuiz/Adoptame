@@ -12,27 +12,35 @@ Rails.application.routes.draw do
   get 'static_pages/about'
   get 'static_pages/contact'
 
+  #ruta para asignar mascota a la adopcion
+  #get '/actual_pet/:pet_id' => 'adoption_forms#new', as: 'new_adoption'
+
+
   #Admin/pets
   namespace :admin do
     resources :pets
   end
   
+  #Blog
+  #elementos de CRUD para:
+  resources :pets  do
+    resources :adoption_forms
+  end
+  resources :articles do
+    resources :comments
+  end 
+
   #Admin/institutions
   namespace :admin do
     resources :institutions
   end
 
-  #elementos de CRUD para:
-  resources :adoption_forms
+  #resources :adoption_forms 
   resources :pets
   resources :institutions
   resources :users
   resources :tags
   
-  #Blog
-  resources :articles do
-    resources :comments
-  end 
 
   #Buscador
   resources :pet do

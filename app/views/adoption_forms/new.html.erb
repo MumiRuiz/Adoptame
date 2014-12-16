@@ -5,20 +5,20 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <div class="panel-heading">
-                   <h4>Completa el Proceso de Adopción</h4>
+                          <h4>Completa el Proceso de Adopción de <%= @pet.name.capitalize%></h4>
                         </div>
-                        <%= form_for(@adoption_form) do |f| %>
-  <% if @adoption_form.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@adoption_form.errors.count, "error") %> prohibited this adoption_form from being saved:</h2>
+                        <%= form_for ([ @pet, @adoption_form ]) do |f| %>
+                          <% if @adoption_form.errors.any? %>
+                            <div id="error_explanation">
+                              <h2><%= pluralize(@adoption_form.errors.count, "error") %> prohibited this adoption_form from being saved:</h2>
 
-      <ul>
-      <% @adoption_form.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+                              <ul>
+                              <% @adoption_form.errors.full_messages.each do |message| %>
+                                <li><%= message %></li>
+                              <% end %>
+                              </ul>
+                            </div>
+                          <% end %>
 
   				<div class="form-group">                  
                             <%= f.label :name, class: "col-sm-2 control-label" %>
@@ -247,16 +247,12 @@
     <%= f.label :question_28 %><br>
     <%= f.text_field :question_28 %>
   </div>
-  <div class="field">
-    <%= f.label :pets_id %><br>
-    <%= f.text_field :pets_id %>
-  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
 
-<%= link_to 'Back', adoption_forms_path %>
+
                       </div>
                 </div>
             </div>

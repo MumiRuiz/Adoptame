@@ -4,7 +4,7 @@ class Pet < ActiveRecord::Base
 
   before_destroy :ensure_not_referenced_by_any_adoption
   
-  has_one :adoption_form
+  has_many :adoption_forms
   has_many :adoptions
   belongs_to :user#, through: :adoptions
   belongs_to :institution
