@@ -7,86 +7,58 @@
         <div class="container">
           <div class="flexslider carousel">
             <ul class="slides">
-              <li>
-                <%= image_tag "slider4_1121x480.png" %></a>
-              </li>
-              <li>
-                <%= image_tag "slider6_1121x480.png" %></a>
-              </li>
-              <li>
-                <%= image_tag "slider7_1121x480.png" %></a>
-              </li>
+             <li><%= image_tag "slider4_1121x480.png" %></a></li>
+             <li><%= image_tag "slider6_1121x480.png" %></a></li>
+             <li><%= image_tag "slider7_1121x480.png" %></a></li>
             </ul>
 
-           <div class="search-box .col-xs-,  .col-sm-,  .col-md-,  .col-lg-">
-       
-          <h2>Busca una mascota</h2>
-             <%= search_form_for  @search do |f|%>            
-  
-            <div class= "select-style" >
-               <%= f.select :city_eq, options_for_select([['Selecciona la Ciudad ', ''], ['Arauca'], ['Armenia'], ['Barranquilla'], ['Bogotá'], ['Bucaramanga'], ['Cali'], ['Cartagena de Indias'], ['Cucutá'], ['Florencia'], ['Ibagué'], ['Inírida'], ['Leticia'], ['Manizales'], ['Medellín'], ['Mitú'], ['Mocoa'], ['Montería'], ['Neiva'], ['Pasto'], ['Pereira'], ['Popayán'], ['Puerto Carreño'], ['Quibdó'], ['Riohacha'], ['San Andrés'], ['San José del Guaviare'], ['Santa Marta'], ['Sincelejo'], ['Tunja'], ['Valledupar'], ['Villavicencio'], ['Yopal']], :selected => :city) %>
-                <%#= f.text_field :city_cont, class: "form-control", placeholder: "Escribe tu ciudad " %>
-            </div>
+            <div class="search-box .col-xs-,  .col-sm-,  .col-md-,  .col-lg-">       
+              <h2>Busca una mascota</h2>
+                 <%= search_form_for  @search do |f|%>            
+                <div class= "select-style" >
+                   <%= f.select :city_eq, options_for_select([['Selecciona la Ciudad ', ''], ['Arauca'], ['Armenia'], ['Barranquilla'], ['Bogotá'], ['Bucaramanga'], ['Cali'], ['Cartagena de Indias'], ['Cucutá'], ['Florencia'], ['Ibagué'], ['Inírida'], ['Leticia'], ['Manizales'], ['Medellín'], ['Mitú'], ['Mocoa'], ['Montería'], ['Neiva'], ['Pasto'], ['Pereira'], ['Popayán'], ['Puerto Carreño'], ['Quibdó'], ['Riohacha'], ['San Andrés'], ['San José del Guaviare'], ['Santa Marta'], ['Sincelejo'], ['Tunja'], ['Valledupar'], ['Villavicencio'], ['Yopal']], :selected => :city) %>
+                </div>
+                <div class= "select-style" >
+                  <%= f.select :kind_eq, options_for_select([['Selecciona tipo de mascota', ''], ['Perro'], ['Gato']], :selected => :kind) %>
+                </div>
+                <div class= "select-style">
+                  <%= f.select :gender_eq, options_for_select([['Selecciona el genero de la mascota', ''], ['Macho'], ['Hembra']], :selected => :gender) %>
+                </div>
+                <div class= "select-style">
+                  <%= f.select :size_eq, options_for_select([['Selecciona el tamaño', ''], ['Pequeño'], ['Mediano'], ['Pequeño'], ['Grande'], ['Extra Grande']], :selected => :size), class: "select-style" %>
+                </div>
 
-            <div class= "select-style" >
-               
-                <%= f.select :kind_eq, options_for_select([['Selecciona tipo de mascota', ''], ['Perro'], ['Gato']], :selected => :kind) %>
-            </div>
-
-            <div class= "select-style">
-               
-               <%= f.select :gender_eq, options_for_select([['Selecciona el genero de la mascota', ''], ['Macho'], ['Hembra']], :selected => :gender) %>
-            </div>
-
-            <div class= "select-style">
-               
-                <%= f.select :size_eq, options_for_select([['Selecciona el tamaño', ''], ['Pequeño'], ['Mediano'], ['Pequeño'], ['Grande'], ['Extra Grande']], :selected => :size), class: "select-style" %>
-            </div>
-
-            <div>
-               
-                <%= f.text_field :age_cont, class: "form-control", placeholder: "Escribe la edad en meses" %>
-            </div>
-               
-
-                <div class="actions"><%= f.submit "search",  class: "btn btn-success"%></div>
-
-
-              </a>
-              <%end%>
+                <div>
+                  <%= f.text_field :age_cont, class: "form-control", placeholder: "Escribe la edad en meses" %>
+                </div>
+                <div class="actions">
+                  <%= f.submit "search",  class: "btn btn-success"%>
+                </div>
+                <%end%>
             </div>
           </div>
         </div>
-        
-      </section>
-      <!-- Slider / End -->
+      </section><!-- Slider / End -->
 
-
-
-      <!-- Page Content -->
-      <section class="page-content">
+      <section class="page-content"><!-- Page Content -->
         <div class="container">
-          
-          <!-- Light Section -->
-          <section class="section-light section-nomargin">
+          <section class="section-light section-nomargin"><!-- Light Section -->
             <div class="row">
               <div class="col-md-8">
                 <h2 class="with-subtitle" data-animation="fadeInUp" data-animation-delay="0">Nuevas Mascotas <small data-animation="fadeInUp" data-animation-delay="100">Mascotas en adopción</small></h2>
                 <div class="row">
-                 
                   <% @pets.limit(4).each do |pet| %>
                   <div class="col-xs-6 col-sm-3 col-md-3" data-animation="fadeInLeft" data-animation-delay="0">
                     <div class="job-listing-box">
                       <%= link_to pet_path(pet) do %> 
                       <figure class="job-listing-img">
-                      
                          <%#= image_tag pet.photo.url(:thumb) %>
                       </figure>
                       <div class="job-listing-body">
                         <h4 class="name">
-                          <%= link_to pet.name, pet_path(pet) %></h4>
-                        <p><%=truncate(pet.story){ link_to "Continue", pet_path(pet)} %> 
-                        </p>
+                          <%= link_to pet.name, pet_path(pet) %>
+                        </h4>
+                        <p><%=truncate(pet.story){ link_to "Continue", pet_path(pet)} %></p>
                       </div>
                       <footer class="job-listing-footer">
                         <ul class="meta">
