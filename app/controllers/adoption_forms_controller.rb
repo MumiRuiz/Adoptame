@@ -20,7 +20,6 @@ class AdoptionFormsController < ApplicationController
     @adoption_form = @pet.adoption_forms.new(adoption_form_params)
     @adoption_form.pet_id = params[:pet_id]
     @adoption_form.save
-  
     redirect_to pet_adoption_form_path(@pet, @adoption_form), notice: "Adopcion creada"
   end
 
