@@ -27,16 +27,8 @@ class Admin::PetsController < ApplicationController
   # POST /admin/pets.json
   def create
     @admin_pet = Pet.new(admin_pet_params)
-
-    respond_to do |format|
-      if @admin_pet.save
-        format.html { redirect_to @admin_pet, notice: 'Pet was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @admin_pet }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @admin_pet.errors, status: :unprocessable_entity }
-      end
-    end
+    @admin_pet.save
+    redirect_to admin_pets_path, notice: 'Mascota creada.'
   end
 
   # PATCH/PUT /admin/pets/1

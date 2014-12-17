@@ -29,7 +29,7 @@ class PetsController < ApplicationController
 
     respond_to do |format|
       if @pet.save
-        format.html { redirect_to @pet, notice: 'Pet was successfully created.' }
+        format.html { redirect_to admin_pets_path, notice: 'Pet was created.' }
         format.json { render :show, status: :created, location: @pet }
       else
         format.html { render :new }
