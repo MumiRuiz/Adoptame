@@ -47,7 +47,13 @@
     <tbody>
       <% @admin_pets.each do |admin_pet| %>
         <tr>
-          <td><%= admin_pet.name %></td>
+          <td class="job_title"><%= admin_pet.name %>
+            <ul class="job-dashboard-actions">
+                        <li><%= link_to 'Show', admin_pet %></li>
+                        <li><%= link_to 'Edit', edit_admin_pet_path(admin_pet) %></li>
+                        <li><%= link_to 'Destroy', admin_pet, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+                      </ul>
+          </td>
           <td><%= admin_pet.kind %></td>
           <td><%= admin_pet.age %></td>
           <td><%= admin_pet.gender %></td>
@@ -58,9 +64,6 @@
           <td><%= admin_pet.region %></td>
           <td><%= admin_pet.user %></td>
           <td><%= admin_pet.institution %></td>
-          <td><%= link_to 'Show', admin_pet %></td>
-          <td><%= link_to 'Edit', edit_admin_pet_path(admin_pet) %></td>
-          <td><%= link_to 'Destroy', admin_pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
