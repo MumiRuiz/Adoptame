@@ -54,10 +54,9 @@
                  
                 
 
-                    <%= link_to 'Adoptame', new_pet_adoption_form_path(@pet)%>
-                    <a class="btn btn-success btn-lg"><span class="fa fa-envelope"></span>Adoptame</a>
-                                  
-
+                    <%= link_to new_pet_adoption_form_path(@pet),html_options = {class: "btn btn-success"} do%>
+                    <i class="fa fa-envelope"></i>Adoptame
+                    <% end %>              
                   </div>
                 </div>
 

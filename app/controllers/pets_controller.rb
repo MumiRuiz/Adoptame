@@ -29,7 +29,7 @@ class PetsController < ApplicationController
 
     respond_to do |format|
       if @pet.save
-        format.html { redirect_to admin_pets_path, notice: 'Pet was created.' }
+        format.html { redirect_to admin_pets_path, notice: 'Mascota creada correctamente' }
         format.json { render :show, status: :created, location: @pet }
       else
         format.html { render :new }
@@ -66,7 +66,7 @@ class PetsController < ApplicationController
   def destroy
     @pet.destroy
     respond_to do |format|
-      format.html { redirect_to pets_url, notice: 'Pet was successfully destroyed.' }
+      format.html { redirect_to admin_pets_path, notice: 'Mascota eliminada.' }
       format.json { head :no_content }
     end
   end
@@ -79,6 +79,6 @@ class PetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pet_params
-      params.require(:pet).permit(:name, :kind, :age, :gender, :photo, :size, :story, :city, :country, :region)
+      params.require(:pet).permit(:name, :age, :kind, :gender, :size, :story, :city, :country, :region, :user_id, :institution_id, :manager, :photo,:tag_list)
     end
 end

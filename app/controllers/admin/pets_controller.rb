@@ -27,8 +27,8 @@ class Admin::PetsController < ApplicationController
   # POST /admin/pets.json
   def create
     @admin_pet = Pet.new(admin_pet_params)
-    @admin_pet.save
-    redirect_to admin_pets_path, notice: 'Mascota creada.'
+    
+    redirect_to admin_pets_path, notice: 'Mascota creada correctamente.' if @admin_pet.save = true
   end
 
   # PATCH/PUT /admin/pets/1
