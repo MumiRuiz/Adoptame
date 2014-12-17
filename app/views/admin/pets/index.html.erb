@@ -51,7 +51,7 @@
             <ul class="job-dashboard-actions">
                         <li><%= link_to 'Show', admin_pet %></li>
                         <li><%= link_to 'Edit', edit_admin_pet_path(admin_pet) %></li>
-                        <li><%= link_to 'Destroy', admin_pet, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+                        <li><%= link_to 'Destroy', admin_pet, method: :delete, data: { confirm: 'Are you sure?' }, class: "job-dashboard-action-delete" %></li>
                       </ul>
           </td>
           <td><%= admin_pet.kind %></td>
