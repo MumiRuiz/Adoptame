@@ -26,15 +26,8 @@ class Admin::InstitutionsController < ApplicationController
   def create
     @admin_institution = Institution.new(admin_institution_params)
 
-    respond_to do |format|
-      if @admin_institution.save
-        format.html { redirect_to @admin_institution, notice: 'Institution was successfully created.' }
-        format.json { render :show, status: :created, location: @admin_institution }
-      else
-        format.html { render :new }
-        format.json { render json: @admin_institution.errors, status: :unprocessable_entity }
-      end
-    end
+    redirect_to admin_institutions_path, notice: 'Institución creada correctamente.' if @admin_pet.save = true
+
   end
 
   # PATCH/PUT /admin/institutions/1
