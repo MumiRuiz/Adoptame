@@ -247,3 +247,6 @@ $(window).load(function () {
         }
     }
 });
+
+// Flash fade Hace desaparecer las notificaciones de la pagina
+$(".alert-box").delay(200).addClass("in").fadeOut(4000);
