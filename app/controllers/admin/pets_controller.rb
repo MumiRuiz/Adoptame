@@ -5,7 +5,9 @@ class Admin::PetsController < ApplicationController
   # GET /admin/pets
   # GET /admin/pets.json
   def index
-    @admin_pets = Pet.all
+    #@admin_pets = Pet.all
+    @admin_pets = current_user.pets
+    @user = current_user
   end
 
   # GET /admin/pets/1
@@ -26,7 +28,8 @@ class Admin::PetsController < ApplicationController
   # POST /admin/pets
   # POST /admin/pets.json
   def create
-    @admin_pet = Pet.new(admin_pet_params)
+   # @admin_pet = Pet.new(admin_pet_params)
+    @admin_pet = current_user.admin_pets.new(admin_pet_params)
     
     redirect_to admin_pets_path, notice: 'Mascota creada correctamente.' if @admin_pet.save = true
   end
