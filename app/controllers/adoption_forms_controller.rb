@@ -20,6 +20,8 @@ class AdoptionFormsController < ApplicationController
     @adoption_form = @pet.adoption_forms.new(adoption_form_params)
     @adoption_form.pet_id = params[:pet_id]
     @adoption_form.save
+    #Envia email una vez se guarda el formulario
+    AdoptionMailer.adoption_email(@adoption_form).deliver
     redirect_to pet_adoption_form_path(@pet, @adoption_form), notice: "Adopcion creada"
   end
 

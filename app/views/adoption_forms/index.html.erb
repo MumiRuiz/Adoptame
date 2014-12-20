@@ -96,9 +96,6 @@
         <td><%= adoption_form.question_27 %></td>
         <td><%= adoption_form.question_28 %></td>
         <td><%= adoption_form.pet_id %></td>
-        <td><%= link_to 'Show', pet_adoption_form_path(@adoption_form.pet, @adoption_form.pet) %></td>
-        <td><%= link_to 'Edit', edit_pet_adoption_form(@adoption_form.pet, @adoption_form.pet) %></td>
-        <td><%= link_to 'Destroy', adoption_form, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -106,4 +103,4 @@
 
 <br>
 
-<%= link_to 'New Adoption form', new_adoption_form_path %>
+<%= link_to 'New Adoption form', new_pet_adoption_form %>
