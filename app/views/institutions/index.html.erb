@@ -65,7 +65,11 @@
 
               <li class="job_listing">
                <%= link_to institution_path(institution) do %> 
-                  <img src="http://placehold.it/58x58" alt="" class="company_logo">
+               
+               <!-- logo instituciones -->
+               
+                <%= image_tag institution.photo.url(:thumb) %>
+                  
                   <div class="position">
                     <h3><%= institution.name %></h3>
                     <div class="company">

@@ -1,5 +1,7 @@
 class Pet < ActiveRecord::Base
   
+   belongs_to :user
+  
   has_attached_file :photo, :styles => { :large => "708x671#", :medium => "320x290#", :mediumsmall => "259x159#",  :small => "288x268#", :thumb => "160x160#" },
                   :storage => :s3,
                   :bucket => 'adoptame-pets-photos'
