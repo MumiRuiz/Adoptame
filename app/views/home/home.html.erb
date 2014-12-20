@@ -62,7 +62,7 @@
                           <li class="category"><%= pet.kind %></li>
                           <li class="location"><%=pet.city %> |  <%= pet.region %> |   <%= pet.country %>  |    <%=pet.institution %></li>
                           <li class="location"></li>
-                          <li class="date">Posted <%= time_ago_in_words(pet.created_at) %> ago</li>
+                          <li class="date">Publicada el <%=pet.created_at.strftime('%m/%d/%Y') %></li>
                         </ul>
                       </footer>
                       <% end %>
