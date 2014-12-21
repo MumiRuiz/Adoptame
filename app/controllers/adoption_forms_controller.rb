@@ -24,7 +24,6 @@ class AdoptionFormsController < ApplicationController
     @institution_info = @adoption_form.pet.institution
     #Envia email una vez se guarda el formulario
     AdoptionMailer.adoption_email(@adoption_form).deliver
-    AdoptionMailer.adoption_email(@institution_adoption_form).deliver
     redirect_to pet_adoption_form_path(@pet, @adoption_form), notice: "Adopcion creada"
   end
 
