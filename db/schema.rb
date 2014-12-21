@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20141217043640) do
     t.integer  "pets_id"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
+    t.integer  "pet_id"
   end
 
   add_index "adoption_forms", ["pets_id"], name: "index_adoption_forms_on_pets_id"
