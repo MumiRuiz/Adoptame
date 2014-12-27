@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag 'styles' %>
+
 <div class="container">  
   <div class="content">
     <div class="row">
@@ -9,6 +11,10 @@
     <%= link_to tag.name, tag_path(tag) %>
   <% end %>
 </p>
+
+<p><%= image_tag @article.image.url(:medium) %></p>
+
+
 
 <p><%= @article.body %></p>
 
