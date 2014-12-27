@@ -46,7 +46,14 @@
   <tbody>
     <% @admin_institutions.each do |admin_institution| %>
       <tr>
-        <td><%= admin_institution.name %></td>
+        <td class="job_title"><%= admin_institution.name %>
+          <ul class="job-dashboard-actions">
+                        <li><%= link_to 'Show', admin_institution %></li>
+                        <li><%= link_to 'Edit', edit_admin_institution_path(admin_institution)%></li>
+                        <li><%= link_to 'Delete', admin_institution, method: :delete, data: { confirm: 'Are you sure?' }, class: "job-dashboard-action-delete" %></li>
+                      </ul>
+
+        </td>
         <td><%= admin_institution.username %></td>
         <td><%= admin_institution.email %></td>
         <td><%= admin_institution.password %></td>
@@ -57,9 +64,7 @@
         <td><%= admin_institution.manager %></td>
         <td><%= admin_institution.address %></td>
         <td><%= admin_institution.description %></td>
-        <td><%= link_to 'Show', admin_institution %></td>
-        <td><%= link_to 'Edit', edit_admin_institution_path(admin_institution) %></td>
-        <td><%= link_to 'Destroy', admin_institution, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+   
       </tr>
     <% end %>
   </tbody>

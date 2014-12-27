@@ -185,7 +185,7 @@ body.boxed .site-wrapper {
   display: table-cell;
   vertical-align: middle;
   text-align: right;
-  width: 50%;
+  width: 100%;
   background: black;
 }
 

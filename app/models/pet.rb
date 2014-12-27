@@ -1,9 +1,21 @@
 class Pet < ActiveRecord::Base
-  #list en orden ascendente las mascotas
+  
+  #lista en orden descendente las mascotas
+  
   default_scope { order(created_at: :desc)}
 
   before_destroy :ensure_not_referenced_by_any_adoption
   
+  #Validaciones
+  has_attached_file :photo, :styles => { :large => "708x671#", :medium => "320x290#", :mediumsmall => "259x159#",  :small => "288x268#", :thumb => "160x160#" },
+                  :storage => :s3,
+                  :bucket => 'adoptame-pets-photos'
+
+  validates_attachment_content_type :photo, :presence => true, :size => { :in => 0..10.megabytes }, :content_type => /\Aimage\/.*\Z/
+
+  #Relaciones
+  belongs_to :user
+  has_many :adoption_forms
   has_many :adoptions
   belongs_to :user#, through: :adoptions
   belongs_to :institution
@@ -19,7 +31,7 @@ class Pet < ActiveRecord::Base
   
   private
 
-  # ensure that there are no adoption referencing this product
+  #nos aseguramos de que no hay adopciones referenciadas con esta mascota cuando borramos
   def ensure_not_referenced_by_any_adoption
     if adoptions.empty?
       return true

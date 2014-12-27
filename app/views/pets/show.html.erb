@@ -31,7 +31,7 @@
                 <div class="row">
                   <div class="col-md-5">
                     <figure class="alignnone">
-                      <%#= image_tag @pet.photo.url(:small) %>
+                      <%= image_tag @pet.photo.url(:small) %>
                     </figure>
                   </div>
                   <div class="col-md-7">
@@ -54,10 +54,9 @@
                  
                 
 
-                    
-                    <a class="btn btn-success btn-lg"><span class="fa fa-envelope"></span>Adoptame</a>
-                                  
-
+                    <%= link_to new_pet_adoption_form_path(@pet),html_options = {class: "btn btn-success"} do%>
+                    <i class="fa fa-envelope"></i>Adoptame
+                    <% end %>              
                   </div>
                 </div>
 

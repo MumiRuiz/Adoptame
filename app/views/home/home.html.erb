@@ -1,118 +1,82 @@
+    <div class="main" role="main"><!-- Main -->
 
-<!-- Main -->
-    <div class="main" role="main">
-
-      <!-- Slider -->
-      <section class="slider-holder .col-xs-,  .col-sm-,  .col-md-,  .col-lg-">
+      <section class="slider-holder .col-xs-,  .col-sm-,  .col-md-,  .col-lg-"><!-- Slider -->
         <div class="container">
           <div class="flexslider carousel">
             <ul class="slides">
-              <li>
-                <%= image_tag "slider4_1121x480.png" %></a>
-              </li>
-              <li>
-                <%= image_tag "slider6_1121x480.png" %></a>
-              </li>
-              <li>
-                <%= image_tag "slider7_1121x480.png" %></a>
-              </li>
+             <li><%= image_tag "slider4_1121x480.png" %></a></li>
+             <li><%= image_tag "slider6_1121x480.png" %></a></li>
+             <li><%= image_tag "slider7_1121x480.png" %></a></li>
             </ul>
 
-           <div class="search-box .col-xs-,  .col-sm-,  .col-md-,  .col-lg-">
-       
-          <h2>Busca una mascota</h2>
-             <%= search_form_for  @search do |f|%>            
-  
-            <div class= "select-style" >
-               <%= f.select :city_eq, options_for_select([['Selecciona la Ciudad ', ''], ['Arauca'], ['Armenia'], ['Barranquilla'], ['Bogotá'], ['Bucaramanga'], ['Cali'], ['Cartagena de Indias'], ['Cucutá'], ['Florencia'], ['Ibagué'], ['Inírida'], ['Leticia'], ['Manizales'], ['Medellín'], ['Mitú'], ['Mocoa'], ['Montería'], ['Neiva'], ['Pasto'], ['Pereira'], ['Popayán'], ['Puerto Carreño'], ['Quibdó'], ['Riohacha'], ['San Andrés'], ['San José del Guaviare'], ['Santa Marta'], ['Sincelejo'], ['Tunja'], ['Valledupar'], ['Villavicencio'], ['Yopal']], :selected => :city) %>
-                <%#= f.text_field :city_cont, class: "form-control", placeholder: "Escribe tu ciudad " %>
-            </div>
+            <div class="search-box .col-xs-,  .col-sm-,  .col-md-,  .col-lg-">       
+              <h2>Busca una mascota</h2>
+                 <%= search_form_for  @search do |f|%>            
+                <div class= "select-style" >
+                   <%= f.select :city_eq, options_for_select([['Selecciona la Ciudad ', ''], ['Arauca'], ['Armenia'], ['Barranquilla'], ['Bogotá'], ['Bucaramanga'], ['Cali'], ['Cartagena de Indias'], ['Cucutá'], ['Florencia'], ['Ibagué'], ['Inírida'], ['Leticia'], ['Manizales'], ['Medellín'], ['Mitú'], ['Mocoa'], ['Montería'], ['Neiva'], ['Pasto'], ['Pereira'], ['Popayán'], ['Puerto Carreño'], ['Quibdó'], ['Riohacha'], ['San Andrés'], ['San José del Guaviare'], ['Santa Marta'], ['Sincelejo'], ['Tunja'], ['Valledupar'], ['Villavicencio'], ['Yopal']], :selected => :city) %>
+                </div>
+                <div class= "select-style" >
+                  <%= f.select :kind_eq, options_for_select([['Selecciona tipo de mascota', ''], ['Perro'], ['Gato']], :selected => :kind) %>
+                </div>
+                <div class= "select-style">
+                  <%= f.select :gender_eq, options_for_select([['Selecciona el genero de la mascota', ''], ['Macho'], ['Hembra']], :selected => :gender) %>
+                </div>
+                <div class= "select-style">
+                  <%= f.select :size_eq, options_for_select([['Selecciona el tamaño', ''], ['Pequeño'], ['Mediano'], ['Pequeño'], ['Grande'], ['Extra Grande']], :selected => :size), class: "select-style" %>
+                </div>
 
-            <div class= "select-style" >
-               
-                <%= f.select :kind_eq, options_for_select([['Selecciona tipo de mascota', ''], ['Perro'], ['Gato']], :selected => :kind) %>
-            </div>
-
-            <div class= "select-style">
-               
-               <%= f.select :gender_eq, options_for_select([['Selecciona el genero de la mascota', ''], ['Macho'], ['Hembra']], :selected => :gender) %>
-            </div>
-
-            <div class= "select-style">
-               
-                <%= f.select :size_eq, options_for_select([['Selecciona el tamaño', ''], ['Pequeño'], ['Mediano'], ['Pequeño'], ['Grande'], ['Extra Grande']], :selected => :size), class: "select-style" %>
-            </div>
-
-            <div>
-               
-                <%= f.text_field :age_cont, class: "form-control", placeholder: "Escribe la edad en meses" %>
-            </div>
-               
-
-                <div class="actions"><%= f.submit "search",  class: "btn btn-success"%></div>
-
-
-              </a>
-              <%end%>
+                <div>
+                  <%= f.text_field :age_cont, class: "form-control", placeholder: "Escribe la edad en meses" %>
+                </div>
+                <div class="actions">
+                  <%= f.submit "search",  class: "btn btn-success"%>
+                </div>
+                <%end%>
             </div>
           </div>
         </div>
-        
-      </section>
-      <!-- Slider / End -->
+      </section><!-- Slider / End -->
 
-
-
-      <!-- Page Content -->
-      <section class="page-content">
+      <section class="page-content"><!-- Page Content -->
         <div class="container">
-          
-          <!-- Light Section -->
-          <section class="section-light section-nomargin">
+          <section class="section-light section-nomargin"><!-- Light Section -->
             <div class="row">
               <div class="col-md-8">
                 <h2 class="with-subtitle" data-animation="fadeInUp" data-animation-delay="0">Nuevas Mascotas <small data-animation="fadeInUp" data-animation-delay="100">Mascotas en adopción</small></h2>
                 <div class="row">
-                 
                   <% @pets.limit(4).each do |pet| %>
                   <div class="col-xs-6 col-sm-3 col-md-3" data-animation="fadeInLeft" data-animation-delay="0">
                     <div class="job-listing-box">
                       <%= link_to pet_path(pet) do %> 
                       <figure class="job-listing-img">
-                      
                          <%#= image_tag pet.photo.url(:thumb) %>
                       </figure>
                       <div class="job-listing-body">
                         <h4 class="name">
-                          <a href="job-profile.html"><%= pet.name %></a></h4>
-                        <p><%=truncate(pet.story){ link_to "Continue", pet_path(pet)} %> 
-                        </p>
+                          <%= link_to pet.name, pet_path(pet) %>
+                        </h4>
+                        <p><%=truncate(pet.story){ link_to "Continue", pet_path(pet)} %></p>
                       </div>
                       <footer class="job-listing-footer">
                         <ul class="meta">
                           <li class="category"><%= pet.kind %></li>
-                          <li class="location"><a href="#">  <%=pet.city %> |  <%= pet.region %> |   <%= pet.country %></a></li>
-                          <li class="location"><%#=pet.institution %></li>
-                          <li class="date">Posted <%= time_ago_in_words(pet.created_at) %> ago</li>
-                          
+                          <li class="location"><%=pet.city %> |  <%= pet.region %> |   <%= pet.country %>  |    <%=pet.institution %></li>
+                          <li class="location"></li>
+                          <li class="date">Publicada el <%=pet.created_at.strftime('%m/%d/%Y') %></li>
                         </ul>
                       </footer>
                       <% end %>
                     </div>
                   </div>
-                <%end%>
-
+                  <%end%>
                   <div class="clearfix visible-xs"></div>
                   <div class="spacer visible-xs"></div>
-
-                 
                 </div>
               </div>
               <div class="col-md-4" data-animation="fadeInRight" data-animation-delay="0">
                 <div class="spacer-lg visible-sm visible-xs"></div>
-                <h2>Aliados</h2>
-                <!-- Featured Listings -->
-                <div class="owl-carousel owl-theme owl-featured-listings">
+                  <h2>Aliados</h2>
+                <div class="owl-carousel owl-theme owl-featured-listings"><!-- Featured Listings -->
                   <div class="job-listing-box featured">
                     <figure class="job-listing-img">
                       <a href="job-profile.html">
@@ -132,18 +96,12 @@
                       </footer>
                     </div>
                   </div>
-                  
-                  
-                </div>
-                <!-- Featured Listings / End -->
-            
+                </div><!-- Featured Listings / End -->
               </div>
             </div>
-          </section>
-          <!-- Light Section / End -->
+          </section><!-- Light Section / End -->
 
-          <!-- Section -->
-          <section class="section section-nomargin">
+          <section class="section section-nomargin"><!-- Section -->
             <div class="row">
               <div class="col-md-6" data-animation="fadeInLeft" data-animation-delay="0">
                 <div class="img-box">
@@ -156,10 +114,10 @@
                   <div class="icon">
                     <i class="entypo search"></i>
                   </div>
+
                   <div class="icon-box-body">
                     <h4>Busca tu mascota ideal</h4>
                     Selecciona diferentes criterios de búsqueda para encontrar la mascota perfecta para TU HOGAR.
-
                   </div>
                 </div>
 
@@ -234,12 +192,11 @@
               </div>
             </div>
 
-          </section>
-          <!-- Section / End -->
+          </section><!-- Section / End -->
 
 
           <!-- Light Section -->
-          <section class="section-light section-nomargin">
+        <section class="section-light section-nomargin">
         <div class="title-bordered" data-animation="fadeInUp" data-animation-delay="0">
           <h2>¿Por qué escogernos?<small>Adopta-Me</small></h2>
         </div>
@@ -289,14 +246,12 @@
             </div>
           </div>
         </div>
-      </section>
-          <!-- Light Section / End -->
+        </section><!-- Light Section / End -->
 
-          <!-- Section -->
-          <section class="section section-nomargin">
-            <div class="title-bordered" data-animation="fadeInUp" data-animation-delay="0">
-              <h2>Nuestro Equipo <small>Adopta-me</small></h2>
-            </div>
+        <section class="section section-nomargin"><!-- Section -->
+          <div class="title-bordered" data-animation="fadeInUp" data-animation-delay="0">
+            <h2>Nuestro Equipo <small>Adopta-me</small></h2>
+          </div>
             <div class="row">
               <div class="col-md-6" data-animation="fadeInLeft" data-animation-delay="0">
                 <div class="testimonial">
@@ -328,13 +283,11 @@
                 </div>
               </div>
             </div>
-          </section>
-          <!-- Section / End -->
-
+          </section><!-- Section / End -->
         </div>
-      </section>
-      <!-- Page Content / End -->
-
+      </section><!-- Page Content / End -->
+    
+    </div>
 
 
 
